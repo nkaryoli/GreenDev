@@ -1,0 +1,37 @@
+:root {
+  --primary-color: #00BFA6;
+  --secondary-color: #E6D5B8;
+  --accent-color: #FF7B72;
+  --text-color: #EAEAEA;
+  --background-color: #0b161a;
+  --font-family-primary: 'Manrope', sans-serif;
+  --font-family-secondary: 'Sora', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  position: relative;
+  overflow-x: hidden;
+  color: var(--text-color);
+  font-family: var(--font-family-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+}
