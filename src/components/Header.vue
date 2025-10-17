@@ -1,4 +1,5 @@
 <script setup>
+import Logotype from './Logotype.vue';
 import { Leaf, Menu, X  } from 'lucide-vue-next';
 import { ref } from 'vue';
 
@@ -8,47 +9,45 @@ const isMenuOpen = ref(false);
 
 <template>
 	<header>
+		<div class="container">
+			<Logotype/>
 
-		<div class="logoType">
-			<div class="logo-box">
-				<Leaf size="28" color="oklch(0.129 0.042 264.695)"/>
-			</div>
-			<div class="logo-text">
-				<h1>GreenDev</h1>
-				<p>Tecnologia para un futuro sostenible</p>
-			</div>
+			<nav :class="{ open: isMenuOpen }" class="navbar">
+				<ul>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Servicios</a></li>
+					<li><a href="">Sostenibilidad</a></li>
+					<li><a href="">I + D</a></li>
+					<li><a href="">Contacto</a></li>
+				</ul>
+			</nav>
+
+			<button class="menu-toggle" @click="isMenuOpen = !isMenuOpen" aria-label="Toggle menu" :aria-expanded="isMenuOpen.toString()">
+				<X v-if="isMenuOpen" />
+				<Menu v-else />
+			</button>
+
 		</div>
-
-		<nav :class="{ open: isMenuOpen }" class="navbar">
-			<ul>
-				<li><a href="">Inicio</a></li>
-				<li><a href="">Servicios</a></li>
-				<li><a href="">Sostenibilidad</a></li>
-				<li><a href="">I + D</a></li>
-				<li><a href="">Contacto</a></li>
-			</ul>
-		</nav>
-
-		<button class="menu-toggle" @click="isMenuOpen = !isMenuOpen" aria-label="Toggle menu" :aria-expanded="isMenuOpen.toString()">
-			<X v-if="isMenuOpen" />
-			<Menu v-else />
-		</button>
-
 	</header>
 </template>
 
 <style scoped>
 
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	position: fixed;
 	z-index: 999;
 	width: 100%;
 	background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+	padding-inline: 2rem;
+}
+
+.container {
+	max-width: 1500px;
 	height: 90px;
-	padding-inline: 1rem;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .logoType {
