@@ -46,7 +46,7 @@ header {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
-	background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+	background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
 	height: 90px;
 	padding-inline: 1rem;
 }
@@ -59,7 +59,7 @@ header {
 }
 
 .logo-box {
-	background: linear-gradient(to bottom right, var(--primary-color), oklch(70.4% 0.14 182.503));
+	background: linear-gradient(to bottom right, var(--primary-100), var(--secondary-100));
 	padding: 9px;
 	border-radius: 8px;
 	display: flex;
@@ -81,7 +81,7 @@ header {
 .logo-text p {
 	font-size: 0.75rem;
 	line-height: 0.75rem;
-	color:  var(--primary-color);
+	color:  var(--primary-100);
 }
 
 .navbar ul {
@@ -94,7 +94,7 @@ header {
 }
 
 .navbar a:hover {
-	color:  var(--primary-color);
+	color:  var(--primary-100);
 }
 
 .menu-toggle {
@@ -121,7 +121,7 @@ header {
 		height: 100vh;
 		padding: 120px 0;
 		display: flex;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(21, 25, 28, 0.9), rgb(0, 0, 0));
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 1), var(--bg-secondary));
 		z-index: 99;
 		transform: translateY(-100%);
 		opacity: 0;
