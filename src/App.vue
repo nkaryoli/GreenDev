@@ -1,12 +1,15 @@
 <script setup>
-import HeaderComponent from './components/HeaderComponent.vue';
+import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
+import Footer from './components/Footer.vue';
+import Services from './components/Services.vue';
 </script>
 
 <template>
-  <HeaderComponent/>
+  <Header/>
   <Hero />
-  <!-- <Footer/> -->
+  <Services />
+  <Footer/>
 </template>
 
 <style scoped>
