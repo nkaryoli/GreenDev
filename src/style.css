@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #00BFA6;
+  --primary-color: oklch(76.5% 0.177 163.223);
   --secondary-color: #E6D5B8;
   --accent-color: #FF7B72;
   --text-color: #EAEAEA;
   --background-color: #0b161a;
-  --font-family-primary: 'Manrope', sans-serif;
-  --font-family-secondary: 'Sora', sans-serif;
+  --font-family-primary: 'Sora', sans-serif;
+  --font-family-secondary: 'Poppins', sans-serif;
 }
 
 * {
