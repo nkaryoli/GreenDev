@@ -61,7 +61,7 @@ section {
 	align-items: center;
 	justify-content: center;	
 	min-height: 100vh;
-	padding-top: 140px;
+	padding: 140px 0 80px 0;
 	background: linear-gradient(to bottom, var(--bg-secondary), transparent);
 }
 
