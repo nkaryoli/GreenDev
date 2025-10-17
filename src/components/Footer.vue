@@ -123,11 +123,12 @@ footer {
 	justify-content: space-between;
 	align-items: start;
 	margin: auto;
+	gap: 5%;
 }
 
 p {
 	margin: 1rem 0;
-	max-width: 40ch;
+	max-width: 80ch;
 }
 
 a, li span, p {
@@ -154,10 +155,11 @@ a, li span, p {
 }
 
 .nav-wrapper {
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: start;
-	gap: 6rem;
+	gap: 1rem;
 }
 
 li:first-child {
@@ -182,4 +184,17 @@ a:hover {
 	align-items: start;
 }
 
+@media (max-width: 968px) {
+	.container {
+		flex-direction: column;
+		gap: 2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.container, .nav-wrapper {
+		flex-direction: column;
+		gap: 2rem;
+	}
+}
 </style>
