@@ -1,11 +1,20 @@
 :root {
-  --primary-color: oklch(76.5% 0.177 163.223);
-  --secondary-color: #E6D5B8;
-  --accent-color: #FF7B72;
-  --text-color: #EAEAEA;
-  --background-color: #0b161a;
+  --primary-100: rgb(255, 169, 41);
+  --primary-50: rgba(255, 169, 41, 0.5);
+  --primary-30: rgba(255, 169, 41, 0.3);
+  --primary-10: rgba(255, 169, 41, 0.1);
+  --secondary-100: rgb(0, 212, 146);
+  --accent-color: rgb(161, 136, 127);
+  --text-color: rgb(234, 234, 234);
+  --bg-primary: rgb(5, 5, 5);
+  --bg-secondary: rgb(21, 25, 28);
+  --bg-secondary-40: rgba(21, 25, 28, 0.4);
   --font-family-primary: 'Sora', sans-serif;
   --font-family-secondary: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -15,7 +24,7 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-primary);
   position: relative;
   overflow-x: hidden;
   color: var(--text-color);
