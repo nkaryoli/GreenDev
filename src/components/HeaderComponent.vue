@@ -1,47 +1,147 @@
-<script></script>
+<script setup>
+import { Leaf, Menu, X  } from 'lucide-vue-next';
+import { ref } from 'vue';
+
+const isMenuOpen = ref(false);
+
+</script>
 
 <template>
 	<header>
-		<nav>
-			<div class="logo">
+
+		<div class="logoType">
+			<div class="logo-box">
+				<Leaf size="28" color="oklch(0.129 0.042 264.695)"/>
+			</div>
+			<div class="logo-text">
 				<h1>GreenDev</h1>
 				<p>Tecnologia para un futuro sostenible</p>
 			</div>
+		</div>
+
+		<nav :class="{ open: isMenuOpen }" class="navbar">
 			<ul>
 				<li><a href="">Inicio</a></li>
 				<li><a href="">Servicios</a></li>
 				<li><a href="">Sostenibilidad</a></li>
-				<li><a href="">Investigacion y Desarrollo</a></li>
+				<li><a href="">I + D</a></li>
 				<li><a href="">Contacto</a></li>
 			</ul>
 		</nav>
+
+		<button class="menu-toggle" @click="isMenuOpen = !isMenuOpen" aria-label="Toggle menu" :aria-expanded="isMenuOpen.toString()">
+			<X v-if="isMenuOpen" />
+			<Menu v-else />
+		</button>
+
 	</header>
 </template>
 
 <style scoped>
 
-nav {
-	position: fixed;
+header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: fixed;
+	z-index: 999;
 	width: 100%;
-	height: 120px;
-	padding-inline: 32px;
 	background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+	height: 90px;
+	padding-inline: 1rem;
+}
+
+.logoType {
+	display: flex;
+	align-items: end;
+	gap: 0.7rem;
 	z-index: 999;
 }
 
-.logo p {
-	font-size: small;
-	color: var(--text-color);
-	opacity: 0.9;
-	margin-top: 10px;
-}
-
-ul {
+.logo-box {
+	background: linear-gradient(to bottom right, var(--primary-color), oklch(70.4% 0.14 182.503));
+	padding: 9px;
+	border-radius: 8px;
 	display: flex;
-	gap: 50px;
+	align-items: center;
+	justify-content: center;
 }
 
+.logo-text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.logo-text h1 {
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.logo-text p {
+	font-size: 0.75rem;
+	line-height: 0.75rem;
+	color:  var(--primary-color);
+}
+
+.navbar ul {
+	display: flex;
+	gap: 1.35rem;
+}
+
+.navbar a {
+	transition: all ease-in 0.1s;
+}
+
+.navbar a:hover {
+	color:  var(--primary-color);
+}
+
+.menu-toggle {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	cursor: pointer;
+	display: none;
+	z-index: 999;
+}
+
+@media (max-width: 968px) {
+
+	.menu-toggle {
+		display: block;
+	}
+
+	.navbar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		padding: 120px 0;
+		display: flex;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(21, 25, 28, 0.9), rgb(0, 0, 0));
+		z-index: 99;
+		transform: translateY(-100%);
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.4s ease;
+	}
+	
+	.navbar.open {
+		display: flex;
+		justify-content: center;
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.navbar.open ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.navbar.open ul a {
+		padding: 0.6rem 1rem
+	}
+}
 </style>
