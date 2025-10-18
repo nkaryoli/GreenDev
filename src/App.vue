@@ -1,20 +1,13 @@
 <script setup>
-import Header from './components/Header.vue';
-import Hero from './components/Hero.vue';
-import Footer from './components/Footer.vue';
-import Services from './components/Services.vue';
-import Sustenability
- from './components/Sustenability.vue';
+import { RouterView } from 'vue-router';
+import HeaderComponent from './components/HeaderComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 </script>
 
 <template>
-  <Header/>
-  <Hero />
-  <Services />
-  <Sustenability />
-  <Footer/>
+  <HeaderComponent />
+  <RouterView />
+  <FooterComponent />
 </template>
 
-<style scoped>
-
-</style>
+<style></style>
