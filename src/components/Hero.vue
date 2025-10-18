@@ -1,7 +1,7 @@
 <script setup>
 import { ArrowRight, TrendingDown, Zap } from 'lucide-vue-next';
-import Card from './Card.vue';
 import BgHero from './BgHero.vue';
+import Stats from './Stats.vue';
 
 </script>
 
@@ -34,25 +34,8 @@ import BgHero from './BgHero.vue';
 					Conoce nuestros servicios
 				</button>
 			</div>
-
-			<div class="cards-box">
-				<Card>
-					<TrendingDown class="icon"  />
-					<p>-40%</p>
-					<small>Reducción consumo energético</small>
-				</Card>
-				<Card>
-					<Zap  class="icon" />
-					<p>100%</p>
-					<small>Energía renovable</small>
-				</Card>
-				<Card>
-					<TrendingDown class="icon" />
-					<p>-60%</p>
-					<small >Emisiones CO2</small>
-				</Card>
-			</div>
 		</div>
+		<Stats />
 		<BgHero/>
     </section>
 </template>
@@ -61,10 +44,11 @@ import BgHero from './BgHero.vue';
 
 section {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;	
 	min-height: 100vh;
-	padding: 140px 0 80px 0;
+	padding-top: 140px;
 	background: linear-gradient(to bottom, var(--bg-secondary), transparent);
 	position: relative;
 	overflow: hidden;
@@ -78,6 +62,7 @@ section {
 	justify-content: center;
 	text-align: center;
 	z-index: 11;
+	margin-bottom: 2rem;
 }
 
 .tag {
@@ -161,33 +146,6 @@ section {
 
 .services-btn:hover {
 	background: var(--primary-10);
-}
-
-
-.cards-box {
-	display: flex;
-	gap: 1.8rem;
-	width: 100%;
-	height: 200px;
-}
-
-.cards-box .icon {
-	color: var(--primary-100);
-	width: 40px;
-	height: 40px;
-	margin-bottom: 1rem;
-}
-
-.cards-box p {
-	font-size: 1.7rem;
-	line-height: 2rem;
-	font-weight: 700;
-	margin-bottom: 0.25rem;
-}
-
-.cards-box small {
-	font-size: 0.85rem;
-	opacity: 0.7;
 }
 
 </style>
