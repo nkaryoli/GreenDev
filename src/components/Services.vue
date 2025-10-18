@@ -1,40 +1,23 @@
 <script setup>
 import { Globe, Smartphone, Server } from 'lucide-vue-next';
 import ServiceCard from './ServiceCard.vue';
+import { ArrowRight } from 'lucide-vue-next';
 
 const services = [
 	{
 		icon: Globe,
 		title: 'Desarrollo Sostenible de Aplicaciones Web (DAW)',
-		description: 'Optimizamos cada línea de código para minimizar el consumo energético. Utilizamos frameworks eficientes, lazy loading, compresión de assets y técnicas de renderizado optimizado para reducir la carga del servidor y el consumo de recursos del cliente.',
-		features: [
-			'Optimización del rendimiento y velocidad de carga',
-			'Código limpio y eficiente energéticamente',
-			'Hosting en servidores con energía 100% renovable',
-			'CDN optimizado para reducir distancia de transferencia'
-		]
+		description: 'Utilizamos frameworks eficientes y técnicas de renderizado optimizado para reducir la carga del servidor y el consumo de recursos del cliente.',
 	},
 	{
 		icon: Smartphone,
 		title: 'Desarrollo de Aplicaciones Multiplataforma Eficientes (DAM)',
-		description: 'Diseñamos aplicaciones que funcionan de manera óptima en múltiples dispositivos, reduciendo el consumo de recursos y maximizando la eficiencia energética. Una sola base de código para todas las plataformas significa menor impacto ambiental.',
-		features: [
-			'Desarrollo multiplataforma con código único',
-			'Optimización de batería y consumo de red',
-			'Gestión inteligente de recursos del dispositivo',
-			'Actualizaciones OTA para reducir ciclos de desarrollo'
-		]
+		description: 'Aplicaciones que funcionan de manera óptima en múltiples dispositivos, reduciendo el consumo de recursos y maximizando la eficiencia energética.',
 	},
 	{
 		icon: Server,
 		title: 'Administración de Sistemas Energéticamente Eficientes (ASIX)',
-		description: 'Implementamos estrategias avanzadas para reducir el consumo energético en centros de datos y redes corporativas. Utilizamos virtualización, balanceo de carga inteligente y tecnologías de enfriamiento eficiente.',
-		features: [
-			'Migración a infraestructura cloud eficiente',
-			'Implementación de energías renovables',
-			'Monitorización en tiempo real del consumo',
-			'Estrategias de refrigeración pasiva y activa'
-		]
+		description: 'Implementamos estrategias avanzadas para reducir el consumo energético en centros de datos y redes corporativas.',
 	}
 ];
 
@@ -54,12 +37,11 @@ const services = [
 				<template #description>
 					<p>{{ servicio.description }}</p>
 				</template>
-				<template #features>
-					<ul class="features-list">
-						<li v-for="feature in servicio.features" :key="feature">
-							{{ feature }}
-						</li>
-					</ul>
+				<template #action>
+					<RouterLink to="/servicios" class="srv-btn">
+						Saber más
+						<ArrowRight size="20" class="btn-icon"/>
+					</RouterLink>
 				</template>
 			</ServiceCard>
 		</div>
@@ -106,13 +88,28 @@ p {
 	max-width: 1500px;
 }
 
-.features-list {
+.srv-btn {
+	color: var(--primary-100);
 	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+	align-items: center;
+	justify-self: end;
+	gap: 0.25rem;
+	margin-right: 1rem;
 	font-size: 0.9rem;
-	list-style-type: disc;
-	margin-left: 1rem;
+	transition: all 0.3s ease;
+	font-weight: 300;
+}
+
+.srv-btn:hover {
+	font-weight: 500;
+}
+
+.btn-icon {
+	transition: all 0.3s ease;
+}
+
+.srv-btn:hover .btn-icon {
+	transform: translateX(3px);
 }
 
 </style>

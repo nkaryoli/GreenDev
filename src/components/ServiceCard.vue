@@ -26,7 +26,7 @@ defineProps({
 			</div>
 			<div class="card-content">
 				<slot name="description"></slot>
-				<slot name="features"></slot>
+				<slot name="action"></slot>
 			</div>
 		</article>
 	</div>
@@ -37,7 +37,7 @@ defineProps({
 	.wrapper {
 		background: linear-gradient(to bottom right, var(--primary-10), var(--secondary-30) );
 		padding: 0.05rem;
-		border-radius: 1rem;
+		border-radius: 0.525rem;
 	}
 
 	.service-card {
@@ -47,9 +47,9 @@ defineProps({
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 1.5rem;
+		padding: 1.2rem;
 		border: 1px solid transparent;
-		border-radius: 1rem;
+		border-radius: 0.525rem;
 		background-color: var(--bg-primary-50);
 		transition: all 0.3s ease;
 	}
@@ -72,7 +72,7 @@ defineProps({
 		color:  var(--primary-100);
 		background-color:var(--primary-10);
 		padding: 1rem;
-		border-radius: 0.6rem;
+		border-radius: 0.4rem;
 		display: flex;
 		transition: all 0.3s ease;
 	}
@@ -87,7 +87,6 @@ defineProps({
 	}
 
 	h3 {
-		font-size: 1.25rem;
 		color: var(--text-primary);
 		margin: 0;
 	}
