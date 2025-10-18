@@ -1,6 +1,8 @@
 <script setup>
 import { ArrowRight, TrendingDown, Zap } from 'lucide-vue-next';
-import Card from './Card.vue'
+import Card from './Card.vue';
+import BgHero from './BgHero.vue';
+
 </script>
 
 <template>
@@ -51,6 +53,7 @@ import Card from './Card.vue'
 				</Card>
 			</div>
 		</div>
+		<BgHero/>
     </section>
 </template>
 
@@ -63,6 +66,8 @@ section {
 	min-height: 100vh;
 	padding: 140px 0 80px 0;
 	background: linear-gradient(to bottom, var(--bg-secondary), transparent);
+	position: relative;
+	overflow: hidden;
 }
 
 .wrapper {
@@ -72,6 +77,7 @@ section {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	z-index: 11;
 }
 
 .tag {

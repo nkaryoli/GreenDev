@@ -19,6 +19,7 @@
 		border: 1px solid var(--primary-10);
 		border-radius: 1rem;
 		background-color: var(--bg-secondary-40);
+		backdrop-filter: blur(5px);
 		transition: all 0.3s ease;
 	}
 
