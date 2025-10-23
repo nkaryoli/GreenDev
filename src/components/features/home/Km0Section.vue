@@ -51,9 +51,7 @@ const concepts = [
 .km {
 	width: 100vw;
 	position: relative;
-	margin-bottom: 6rem;
 	overflow: hidden;
-	border: 1px solid var(--secondary);
 }
 
 .km img {
