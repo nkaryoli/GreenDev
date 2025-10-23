@@ -1,5 +1,4 @@
 <script setup>
-import CirclesAnimation from '../../global/CirclesAnimation.vue';
 import FlippingCard from '../../global/FlippingCard.vue';
 import SectionHeadder from '../../global/SectionHeadder.vue';
 const ods = [
