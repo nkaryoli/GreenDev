@@ -2,6 +2,7 @@ import { createWebHistory, createRouter} from "vue-router";
 import Home from "../pages/HomePage.vue";
 import ServicesPage from "../pages/ServicesPage.vue";
 import SustenabilityPage from "../pages/SustenabilityPage.vue";
+import ContactPage from "../pages/ContactPage.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -20,6 +21,11 @@ const router = createRouter({
 			path: "/sostenibilidad",
 			name: "sostenibilidad",
 			component: SustenabilityPage,
+		},
+		{
+			path: "/contacto",
+			name: "contacto",
+			component: ContactPage,
 		}
 	]
 })
