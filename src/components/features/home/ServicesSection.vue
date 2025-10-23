@@ -1,6 +1,6 @@
 <script setup>
 import { Globe, Smartphone, Server } from 'lucide-vue-next';
-import ServiceCard from './ServiceCard.vue';
+import ServiceCard from '../../global/ServiceCard.vue';
 import { ArrowRight } from 'lucide-vue-next';
 
 const services = [
@@ -51,7 +51,6 @@ const services = [
 
 section {
 	width: 100%;
-	min-height: 100vh;
 	padding: 4rem 2rem;
 	background-color: var(--bg-secondary-40);
 	display: flex;

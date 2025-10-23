@@ -1,6 +1,6 @@
 <script setup>
 import { Globe, Smartphone, Server } from 'lucide-vue-next';
-import ServiceCard from '../components/ServiceCard.vue';
+import ServiceCard from '../components/global/ServiceCard.vue';
 
 const services = [
 	{

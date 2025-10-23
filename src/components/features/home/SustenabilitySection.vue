@@ -1,11 +1,10 @@
 <script setup>
-import { TrendingDown, Award, MapPin } from 'lucide-vue-next';
+import { TrendingDown, Award } from 'lucide-vue-next';
 
 const items = [
 	{
 		icon: TrendingDown,
 		title: 'Reducción de Costes Ambientales',
-		description: 'Las empresas que trabajan con GreenDev experimentan una reducción significativa en sus costes operativos gracias a la optimización del consumo energético. Menos consumo significa menores facturas y un impacto ambiental reducido.',
 		features: [
 			'Reducción de hasta 40% en costes de infraestructura',
 			'Optimización del ciclo de vida de hardware',
@@ -15,7 +14,6 @@ const items = [
 	{
 		icon: Award,
 		title: 'Ventajas Competitivas Sostenibles',
-		description: 'La eficiencia energética y el compromiso con la sostenibilidad ofrecen ventajas competitivas tangibles en el mercado actual. Los consumidores y socios comerciales valoran cada vez más las empresas responsables.',
 		features: [
 			'Mejora de la imagen corporativa y branding',
 			'Acceso a incentivos y subvenciones verdes',
@@ -24,20 +22,7 @@ const items = [
 	}
 ];
 
-const concepts = [
-	{
-		title: 'Servidores Locales',
-		description: 'Uso de infraestructura de servidores cercana geográficamente para reducir la latencia y el consumo energético en transmisión de datos.'
-	},
-	{
-		title: 'Tecnologías Locales',
-		description: 'Priorización de proveedores de servicios y tecnologías con presencia local, reduciendo la huella de carbono del transporte y logística.'
-	},
-	{
-		title: 'Edge Computing',
-		description: 'Procesamiento de datos cerca de donde se generan, minimizando transferencias innecesarias y optimizando el consumo energético.'
-	}
-];
+
 </script>
 
 <template>
@@ -62,34 +47,10 @@ const concepts = [
 			</article>
 		</div>
 	</section>
-	
-	<div class="km">
-		<img src="/public/bgs1.svg" alt="Background concepto KM 0">
-		<div class="wraper">
-			<div class="container">
-				<div class="container-header">
-					<MapPin class="header-icon"/>
-					<div class="header-text">
-						<h3>Concepto KM 0 en Tecnología</h3>
-						<p>Al igual que en la alimentación, el concepto de KM 0 aplicado al desarrollo tecnológico busca minimizar la distancia entre los recursos y su uso. En GreenDev, promovemos:</p>
-					</div>
-				</div>
-				<div class="container-article">
-					<article 
-						v-for="concept in concepts" 
-						:key="concept.title" 
-						class="card"
-					>
-						<h4>{{ concept.title }}</h4>
-						<p>{{ concept.description }}</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</div>
 </template>
 
 <style scoped>
+
 section {
 	width: 100%;
 	max-width: 1500px;
@@ -98,7 +59,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	overflow: hidden;
 }
 
 h2 {
@@ -116,7 +76,7 @@ span {
 .card-container {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	gap: 4rem;
 	margin-bottom: 3rem;
 }
@@ -156,73 +116,6 @@ ul {
 	font-size: 0.9rem;
 	list-style-type: disc;
 	margin-left: 1rem;
-}
-
-ul li {
-	margin-bottom: 1rem;
-}
-
-.km {
-	position: relative;
-	margin-bottom: 6rem;
-	overflow: hidden;
-}
-
-.km img {
-	width: 100%;
-	height: 700px;
-	object-fit: cover;
-}
-
-.km .wraper {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-}
-
-.container {
-	width: 100%;
-	max-width: 1300px;
-	margin: auto;
-	padding: 3rem;
-	display: flex;
-	flex-direction: column;
-	backdrop-filter: blur(15px);
-	border: 1px solid var(--secondary-30);
-	border-radius: 0.6rem;
-	background-color: var(--bg-primary-50);
-}
-
-.container-header {
-	width: 100%;
-	display: flex;
-	gap: 1rem;
-}
-
-.header-icon {
-	width: 80px;
-	height: 80px;
-	color: var(--secondary-100);
-}
-
-.container-article {
-	display: flex;
-	gap: 1rem;
-}
-
-.card {
-	width: 100%;
-	padding: 2rem;
-	background-color: var(--bg-secondary-40);
-	border-radius: 0.6rem;
-}
-
-.card p {
-	font-size: 0.8rem;
-	opacity: 0.8;
-	margin-top: 1rem;
 }
 
 

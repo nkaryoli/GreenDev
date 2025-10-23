@@ -1,13 +1,15 @@
 <script setup>
-import Hero from '../components/Hero.vue';
-import Services from '../components/Services.vue';
-import Sustenability from '../components/Sustenability.vue';
+import Hero from '../components/features/home/Hero.vue';
+import Km0Section from '../components/features/home/Km0Section.vue';
+import ServicesSection from '../components/features/home/ServicesSection.vue';
+import SustenabilitySection from '../components/features/home/SustenabilitySection.vue';
 </script>
 
 <template>
 	<Hero />
-	<Services />
-	<Sustenability />
+	<ServicesSection />
+	<SustenabilitySection />
+	<Km0Section />
 </template>
 
 <style scoped>

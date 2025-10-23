@@ -64,7 +64,7 @@ const concepts = [
 	</section>
 	
 	<div class="km">
-		<img src="/public/bgs1.svg" alt="Background concepto KM 0">
+		<img src="../assets/bgs1.svg" alt="Background concepto KM 0">
 		<div class="wraper">
 			<div class="container">
 				<div class="container-header">
