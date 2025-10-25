@@ -99,7 +99,8 @@ defineProps({
 	background: linear-gradient(-45deg, var(--secondary-30) 0%, var(--secondary-50) 100%);
 	color: white;
 	padding: 0.8rem;
-	line-height: 1.5;
+	line-height: 1.2rem;
+	font-size: 0.9rem;
 	border-radius: 5px;
 	pointer-events: none;
 	transform: translateY(96%);
