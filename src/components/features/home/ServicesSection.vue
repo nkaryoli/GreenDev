@@ -2,6 +2,8 @@
 import { Globe, Smartphone, Server } from 'lucide-vue-next';
 import ServiceCard from '../../global/ServiceCard.vue';
 import { ArrowRight } from 'lucide-vue-next';
+import SectionContainer from '../../global/SectionContainer.vue';
+import SectionHeadder from '../../global/SectionHeadder.vue';
 
 const services = [
 	{
@@ -24,59 +26,43 @@ const services = [
 </script>
 
 <template>
-	<section id="servicios">
-		<h2>Nuestros Servicios</h2>
-		<span>Soluciones tecnológicas diseñadas para minimizar el impacto ambiental sin comprometer la calidad ni el rendimiento</span>
-		<div class="cards-container">
-			<ServiceCard 
-				v-for="servicio in services" 
-				:key="servicio.title"
-				:icon="servicio.icon"
-				:title="servicio.title"
-			>
-				<template #description>
-					<p>{{ servicio.description }}</p>
-				</template>
-				<template #action>
-					<RouterLink to="/servicios" class="srv-btn">
-						Saber más
-						<ArrowRight size="20" class="btn-icon"/>
-					</RouterLink>
-				</template>
-			</ServiceCard>
-		</div>
-	</section>	
+	<div class="section">
+		<SectionContainer>
+			<div class="wraper">
+				<SectionHeadder>
+					<template #title>Nuestros Servicios</template>
+					<template #subtitle>Soluciones tecnológicas diseñadas para minimizar el impacto ambiental sin
+						comprometer la calidad ni el rendimiento</template>
+				</SectionHeadder>
+				<div class="cards-container">
+					<ServiceCard v-for="servicio in services" :key="servicio.title" :icon="servicio.icon"
+						:title="servicio.title">
+						<template #description>
+							<p>{{ servicio.description }}</p>
+						</template>
+						<template #action>
+							<RouterLink to="/servicios" class="srv-btn">
+								Saber más
+								<ArrowRight size="20" class="btn-icon" />
+							</RouterLink>
+						</template>
+					</ServiceCard>
+				</div>
+			</div>
+		</SectionContainer>
+	</div>
 </template>
-<style scoped>
 
-section {
-	width: 100%;
-	padding: 4rem 2rem;
+<style scoped>
+.section {
 	background-color: var(--bg-secondary-40);
+}
+
+.wraper {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-h2 {
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
-	text-align: center;
-}
-
-span {
-	font-size: 1.2rem;
-	text-align: center;
-	max-width: 800px;
-	margin-bottom: 3rem;
-}
-
-p {
-	font-size: 0.9rem;
-	line-height: 1.6rem;
-	font-weight: 300;
-	max-width: 800px;
-	margin-bottom: 1.2rem;
 }
 
 .cards-container {
@@ -110,5 +96,4 @@ p {
 .srv-btn:hover .btn-icon {
 	transform: translateX(3px);
 }
-
 </style>
