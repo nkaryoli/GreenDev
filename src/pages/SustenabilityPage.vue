@@ -1,5 +1,7 @@
 <script setup>
 import { TrendingDown, Award, MapPin } from 'lucide-vue-next';
+import SectionContainer from '../components/global/SectionContainer.vue';
+import Km0Concept from '../components/features/sustenability/Km0Section.vue';
 
 const items = [
 	{
@@ -41,59 +43,33 @@ const concepts = [
 </script>
 
 <template>
-	<section>
-		<h2>Enfoque Sostenible</h2>
-		<span>La sostenibilidad no es solo responsabilidad ambiental, es una ventaja competitiva</span>
-		
-		<div class="card-container">
-			<article 
-				v-for="item in items" 
-				:key="item.title"
-				class="focus-card"
-			>
-				<component :is="item.icon" class="card-icon"/>
-				<h3>{{ item.title }}</h3>
-				<p>{{ item.description }}</p>
-				<ul>
-					<li v-for="feature in item.features" :key="feature">
-						{{ feature }}
-					</li>
-				</ul>
-			</article>
-		</div>
-	</section>
-	
-	<div class="km">
-		<img src="../assets/bgs1.svg" alt="Background concepto KM 0">
-		<div class="wraper">
-			<div class="container">
-				<div class="container-header">
-					<MapPin class="header-icon"/>
-					<div class="header-text">
-						<h3>Concepto KM 0 en Tecnología</h3>
-						<p>Al igual que en la alimentación, el concepto de KM 0 aplicado al desarrollo tecnológico busca minimizar la distancia entre los recursos y su uso. En GreenDev, promovemos:</p>
-					</div>
-				</div>
-				<div class="container-article">
-					<article 
-						v-for="concept in concepts" 
-						:key="concept.title" 
-						class="card"
-					>
-						<h4>{{ concept.title }}</h4>
-						<p>{{ concept.description }}</p>
-					</article>
-				</div>
+	<SectionContainer>
+		<div class="section">
+			<h2>Enfoque Sostenible</h2>
+			<span>La sostenibilidad no es solo responsabilidad ambiental, es una ventaja competitiva</span>
+
+			<div class="card-container">
+				<article v-for="item in items" :key="item.title" class="focus-card">
+					<component :is="item.icon" class="card-icon" />
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<ul>
+						<li v-for="feature in item.features" :key="feature">
+							{{ feature }}
+						</li>
+					</ul>
+				</article>
 			</div>
 		</div>
-	</div>
+		
+	</SectionContainer>
+	<Km0Concept />
 </template>
 
 <style scoped>
-section {
+.section {
 	width: 100%;
 	max-width: 1500px;
-	padding: 3rem 2rem;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -131,7 +107,7 @@ span {
 .card-icon {
 	width: 60px;
 	height: 60px;
-	color:  var(--secondary-100);
+	color: var(--secondary-100);
 	margin-bottom: 1rem;
 	transition: all 0.3s ease;
 }
@@ -162,25 +138,6 @@ ul li {
 	margin-bottom: 1rem;
 }
 
-.km {
-	position: relative;
-	margin-bottom: 6rem;
-	overflow: hidden;
-}
-
-.km img {
-	width: 100%;
-	height: 700px;
-	object-fit: cover;
-}
-
-.km .wraper {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-}
 
 .container {
 	width: 100%;
@@ -230,7 +187,7 @@ ul li {
 	.card-container {
 		gap: 2rem;
 	}
-	
+
 	.container {
 		padding: 2rem;
 		max-width: 95%;
@@ -241,43 +198,43 @@ ul li {
 	section {
 		padding: 2rem 1rem;
 	}
-	
+
 	h2 {
 		font-size: 2rem;
 	}
-	
+
 	span {
 		font-size: 1.1rem;
 		margin-bottom: 2rem;
 	}
-	
+
 	.card-container {
 		flex-direction: column;
 		gap: 2rem;
 		margin-bottom: 2rem;
 	}
-	
+
 	.focus-card {
 		padding: 1.5rem;
 		border-left: 4px solid var(--secondary-50);
 		border-top: 4px solid var(--secondary-50);
 		background: linear-gradient(to bottom, var(--secondary-30), transparent);
 	}
-	
+
 	.card-icon {
 		width: 50px;
 		height: 50px;
 	}
-	
+
 	h3 {
 		font-size: 1.1rem;
 	}
-	
+
 	p {
 		font-size: 0.85rem;
 		line-height: 1.5rem;
 	}
-	
+
 	.km {
 		position: relative;
 		height: auto;
@@ -285,13 +242,13 @@ ul li {
 		display: flex;
 		flex-direction: column;
 	}
-	
+
 	.km img {
 		position: absolute;
 		height: 100%;
 		z-index: 1;
 	}
-	
+
 	.km .wraper {
 		position: relative;
 		height: auto;
@@ -299,7 +256,7 @@ ul li {
 		z-index: 2;
 		flex: 1;
 	}
-	
+
 	.container {
 		position: relative;
 		margin: 1rem;
@@ -307,33 +264,33 @@ ul li {
 		height: auto;
 		min-height: 500px;
 	}
-	
+
 	.container-header {
 		flex-direction: column;
 		text-align: center;
 		gap: 1.5rem;
 		margin-bottom: 1.5rem;
 	}
-	
+
 	.header-icon {
 		width: 60px;
 		height: 60px;
 		margin: 0 auto;
 	}
-	
+
 	.container-article {
 		flex-direction: column;
 		gap: 1rem;
 	}
-	
+
 	.card {
 		padding: 1.5rem;
 	}
-	
+
 	.card h4 {
 		font-size: 1rem;
 	}
-	
+
 	.card p {
 		font-size: 0.8rem;
 	}
@@ -343,66 +300,66 @@ ul li {
 	section {
 		padding: 1.5rem 1rem;
 	}
-	
+
 	h2 {
 		font-size: 1.75rem;
 	}
-	
+
 	span {
 		font-size: 1rem;
 	}
-	
+
 	.focus-card {
 		padding: 1rem;
 	}
-	
+
 	.card-icon {
 		width: 40px;
 		height: 40px;
 		margin-bottom: 0.75rem;
 	}
-	
+
 	h3 {
 		font-size: 1rem;
 		margin-bottom: 0.75rem;
 	}
-	
+
 	p {
 		font-size: 0.8rem;
 		line-height: 1.4rem;
 		margin-bottom: 1rem;
 	}
-	
+
 	ul {
 		font-size: 0.8rem;
 		gap: 0.5rem;
 		margin-left: 0.5rem;
 	}
-	
+
 	ul li {
 		margin-bottom: 0.5rem;
 	}
-	
+
 	.container {
 		padding: 1rem;
 	}
-	
+
 	.container-header h3 {
 		font-size: 1.25rem;
 	}
-	
+
 	.container-header p {
 		font-size: 0.85rem;
 	}
-	
+
 	.card {
 		padding: 1rem;
 	}
-	
+
 	.card h4 {
 		font-size: 0.9rem;
 	}
-	
+
 	.card p {
 		font-size: 0.75rem;
 		margin-top: 0.5rem;
@@ -413,23 +370,23 @@ ul li {
 	h2 {
 		font-size: 1.5rem;
 	}
-	
+
 	span {
 		font-size: 0.9rem;
 	}
-	
+
 	.km {
 		min-height: 500px;
 	}
-	
+
 	.km .wraper {
 		min-height: 500px;
 	}
-	
+
 	.container {
 		padding: 0.75rem;
 	}
-	
+
 	.card {
 		padding: 0.75rem;
 	}
