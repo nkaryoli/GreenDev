@@ -83,6 +83,7 @@ function onClick(e) {
 .primary-btn--full {
 	width: 100%;
 	justify-content: center;
+	border-radius: 5%;
 }
 
 .primary-btn--disabled,
