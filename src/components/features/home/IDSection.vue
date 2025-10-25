@@ -1,0 +1,198 @@
+<script setup>
+import { ArrowRight, Server, Cloud, TrendingDown } from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
+import SectionContainer from '../../global/SectionContainer.vue';
+import Badge from '../../global/Badge.vue';
+import PrimaryBtn from '../../global/PrimaryBtn.vue';
+
+const router = useRouter();
+
+const featuredProjects = [
+	{
+		id: 1,
+		icon: Server,
+		title: 'Optimización Web',
+		summary: 'Reducción del consumo energético en aplicaciones web mediante algoritmos eficientes.',
+		impact: '-40% CO₂'
+	},
+	{
+		id: 2,
+		icon: Cloud,
+		title: 'Cloud Neutro',
+		summary: 'Centros de datos alimentados por energías renovables con sistemas de refrigeración innovadores.',
+		impact: '-80% emisiones'
+	}
+];
+
+const navigateToID = () => {
+	router.push('/investigacion-desarrollo');
+};
+</script>
+
+<template>
+	<div class="wrapper">
+	<SectionContainer>
+			
+				<div class="header">
+					<div class="header-content">
+						<Badge>Innovación</Badge>
+						
+						<h2>Investigación y Desarrollo</h2>
+						<p>
+							Trabajamos en soluciones tecnológicas con bajo impacto de CO₂
+							para alcanzar la neutralidad climática en 2050.
+						</p>
+					</div>
+					<PrimaryBtn @click="navigateToID" variant="outline">
+						<div class="btn-outline">
+							Ver todos los proyectos
+							<ArrowRight class="btn-icon" />
+						</div>
+					</PrimaryBtn>
+				</div>
+
+				<div class="projects-preview">
+					<article v-for="project in featuredProjects" :key="project.id" class="project-card-mini">
+						<component :is="project.icon" class="project-icon" />
+						<h3>{{ project.title }}</h3>
+						<p>{{ project.summary }}</p>
+						<div class="project-impact">
+							<TrendingDown class="impact-icon" />
+							<span>{{ project.impact }}</span>
+						</div>
+					</article>
+				</div>
+			
+			</SectionContainer>
+		</div>
+</template>
+
+
+<style scoped>
+
+.wrapper {
+	max-width: 1500px;
+	margin: 3rem auto;
+}
+
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 3rem;
+	gap: 2rem;
+}
+
+
+.header-content h2 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: var(--text-primary);
+}
+
+.header-content p {
+	font-size: 1.1rem;
+	color: var(--text-secondary);
+	max-width: 600px;
+	line-height: 1.6;
+}
+
+.btn-outline {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+
+.btn-icon {
+	width: 20px;
+	height: 20px;
+	transition: transform 0.3s ease;
+}
+
+.btn-outline:hover .btn-icon {
+	transform: translateX(3px);
+}
+
+.projects-preview {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.project-card-mini {
+	padding: 2rem;
+	background: linear-gradient(135deg, var(--bg-primary), var(--bg-primary), var(--secondary-30));
+	border: 1px solid var(--primary-30);
+	border-radius: 1rem;
+	transition: all 0.3s ease;
+}
+
+.project-card-mini:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	border-color: var(--primary-50);
+	background: linear-gradient(135deg,  var(--bg-primary), var(--secondary-30), var(--bg-primary));
+	box-shadow: 0 10px 25px var(--primary-10);
+}
+
+.project-icon {
+	width: 50px;
+	height: 50px;
+	padding: 12px;
+	background: linear-gradient(to bottom right, var(--bg-primary), var(--primary-100), var(--bg-primary));
+	color: white;
+	border-radius: 12px;
+	margin-bottom: 1.5rem;
+}
+
+.project-card-mini h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: var(--text-primary);
+}
+
+.project-card-mini p {
+	line-height: 1.6;
+	opacity: 0.9;
+	margin-bottom: 1.5rem;
+}
+
+.project-impact {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--primary-100);
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.impact-icon {
+	width: 18px;
+	height: 18px;
+}
+
+@media (max-width: 768px) {
+	.id-preview {
+		padding: 3rem 1rem;
+	}
+
+	.preview-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.header-content h2 {
+		font-size: 2rem;
+	}
+
+	.header-content p {
+		font-size: 1rem;
+	}
+
+	.projects-preview {
+		grid-template-columns: 1fr;
+	}
+}
+</style>
