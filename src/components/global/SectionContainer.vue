@@ -8,7 +8,7 @@
 <style scoped>
 .container {
 	width: 100%;
-	padding: 4rem 2rem;
+	padding: 6rem 2rem;
 }
 
 </style>
