@@ -6,7 +6,7 @@ import { User, Mail, Building2, Phone, Send } from 'lucide-vue-next';
 	<div class="card">
 		<div class="inner-card">
 			<form class="form">
-				<p id="heading">Solicita Información</p>
+				<h3 id="heading">Solicita Información</h3>
 				<div class="field">
 					<User class="input-icon" />
 					<input type="text" class="input-field" placeholder="Tu nombre" />
