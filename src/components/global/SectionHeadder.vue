@@ -9,6 +9,13 @@
 </template>
 
 <style scoped>
+
+.section-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 h2 {
 	font-size: 2.5rem;
 	margin-bottom: 1rem;
