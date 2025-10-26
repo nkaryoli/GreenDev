@@ -2,6 +2,7 @@ import { createWebHistory, createRouter} from "vue-router";
 import Home from "../pages/HomePage.vue";
 import ServicesPage from "../pages/ServicesPage.vue";
 import SustenabilityPage from "../pages/SustenabilityPage.vue";
+import IDPage from "../pages/IDPage.vue";
 import ContactPage from "../pages/ContactPage.vue";
 
 const router = createRouter({
@@ -21,6 +22,11 @@ const router = createRouter({
 			path: "/sostenibilidad",
 			name: "sostenibilidad",
 			component: SustenabilityPage,
+		},
+		{
+			path: "/i+d",
+			name: "desarrollo",
+			component: IDPage,
 		},
 		{
 			path: "/contacto",
