@@ -18,7 +18,7 @@
 	border: 1px solid var(--primary-30);
 	font-size: 0.85rem;
 	color: var(--primary-100);
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 	backdrop-filter: blur(10px);
 }
 

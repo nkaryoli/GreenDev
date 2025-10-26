@@ -87,15 +87,18 @@ const navigateToID = () => {
 
 .header-content h2 {
 	font-size: 2.5rem;
+	font-weight: 500;
 	margin-bottom: 1rem;
 	color: var(--text-primary);
 }
 
 .header-content p {
 	font-size: 1.1rem;
+	font-weight: 200;
+	line-height: 1.7;
+	opacity: 0.95;
 	color: var(--text-secondary);
-	max-width: 600px;
-	line-height: 1.6;
+	max-width: 700px;
 }
 
 .btn-outline {
@@ -124,7 +127,7 @@ const navigateToID = () => {
 .project-card-mini {
 	padding: 2rem;
 	background: linear-gradient(135deg, var(--bg-primary), var(--bg-primary), var(--secondary-30));
-	border: 1px solid var(--primary-30);
+	border: 1px solid var(--primary-10);
 	border-radius: 1rem;
 	transition: all 0.3s ease;
 }
@@ -148,14 +151,17 @@ const navigateToID = () => {
 }
 
 .project-card-mini h3 {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.7;
 	margin-bottom: 1rem;
-	color: var(--text-primary);
 }
 
 .project-card-mini p {
-	line-height: 1.6;
-	opacity: 0.9;
+	font-size: 0.95rem;
+	font-weight: 200;
+	line-height: 1.7;
+	opacity: 0.8;
 	margin-bottom: 1.5rem;
 }
 

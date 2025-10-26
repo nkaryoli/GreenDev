@@ -14,7 +14,6 @@ const navigateToODS = () => {
 
 </script>
 
-
 <template>
 	<section class="sustainability">
 		<SectionContainer>
@@ -65,7 +64,7 @@ const navigateToODS = () => {
 
 <style scoped>
 .sustainability {
-	background: linear-gradient(to right, var(--bg-secondary), var(--bg-primary));
+	background: linear-gradient(to right, var(--bg-primary), var(--bg-secondary-40), var(--bg-primary));
 }
 
 .wrapper {
@@ -80,14 +79,18 @@ const navigateToODS = () => {
 .content h2 {
 	font-size: 2.5rem;
 	margin-bottom: 1.5rem;
+	font-weight: 500;
 
 }
 
 .content p {
-	font-size: 0.9rem;
+	font-size: 1.1rem;
+	font-weight: 200;
+	line-height: 1.7;
+	opacity: 0.9;
 	line-height: 1.7;
 	margin-bottom: 2rem;
-	opacity: 0.85;
+
 }
 
 .ods-highlights {
@@ -101,7 +104,10 @@ const navigateToODS = () => {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	font-weight: 500;
+	font-size: 0.95rem;
+	font-weight: 300;
+	line-height: 1.7;
+	opacity: 0.8;
 }
 
 .highlight-icon {

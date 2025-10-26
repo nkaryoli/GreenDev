@@ -69,15 +69,17 @@ const navigate = () => {
 
 .km0-text h2 {
 	font-size: 2rem;
+	font-weight: 500;
 	margin-bottom: 1rem;
 
 }
 
 .km0-text p {
-	font-size: 1.1rem;
-	line-height: 1.6;
 	margin-bottom: 2rem;
-	opacity: 0.95;
+	font-size: 0.95rem;
+	font-weight: 200;
+	line-height: 1.7;
+	opacity: 0.8;
 }
 
 .btn {

@@ -1,3 +1,16 @@
+<script setup>
+import { MessageSquare, Mail } from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
+import SectionContainer from '../../global/SectionContainer.vue';
+import PrimaryBtn from '../../global/PrimaryBtn.vue';
+
+const router = useRouter();
+
+const navigateToContact = () => {
+	router.push('/contacto');
+};
+</script>
+
 <template>
 	<SectionContainer>
 		<div class="cta-box">
@@ -36,18 +49,6 @@
 
 </template>
 
-<script setup>
-import { MessageSquare, Mail } from 'lucide-vue-next';
-import { useRouter } from 'vue-router';
-import SectionContainer from '../../global/SectionContainer.vue';
-import PrimaryBtn from '../../global/PrimaryBtn.vue';
-
-const router = useRouter();
-
-const navigateToContact = () => {
-	router.push('/contacto');
-};
-</script>
 
 <style scoped>
 .cta-box {
@@ -85,7 +86,7 @@ const navigateToContact = () => {
 .stat-label {
 	font-size: 0.9rem;
 	color: var(--text-secondary);
-	font-weight: 600;
+	font-weight: 300;
 }
 
 .stat-divider {
@@ -96,6 +97,7 @@ const navigateToContact = () => {
 
 .cta-box h2 {
 	font-size: 2.5rem;
+	font-weight: 500;
 	margin-bottom: 1rem;
 	color: var(--text-primary);
 }
@@ -103,6 +105,8 @@ const navigateToContact = () => {
 .cta-box p {
 	font-size: 1.1rem;
 	line-height: 1.6;
+	opacity: 0.85;
+	font-weight: 200;
 	color: var(--text-secondary);
 	margin-bottom: 2.5rem;
 	max-width: 600px;
