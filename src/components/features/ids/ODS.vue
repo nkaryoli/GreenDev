@@ -24,9 +24,6 @@ const ods = [
 
 <template>
 	<section>
-		<!-- <div class="animation">
-			<CirclesAnimation />
-		</div> -->
 		<SectionHeadder>
 			<template #title>Objetivos de Desarrollo Sostenible (ODS)</template>
 			<template #subtitle>Nuestro compromiso con un futuro sostenible a través de la tecnología</template>
@@ -56,16 +53,6 @@ section {
 	align-items: center;
 	position: relative;
 }
-
-/* .animation {
-	position: absolute;
-	top: -29%;
-	left: 50vw;
-	transform: translateX(-25%);
-	z-index: -1;
-	scale: 2;
-	opacity: 0.5;
-} */
 
 .cards-container {
 	width: 100%;
