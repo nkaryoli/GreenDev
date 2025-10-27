@@ -9,7 +9,7 @@ const router = useRouter();
 
 const services = [
 	{
-		icon: Globe,
+		url: '/daw.svg',
 		tag: 'DAW',
 		title: 'Desarrollo Web Sostenible',
 		description: 'Creamos aplicaciones web modernas y eficientes que priorizan el rendimiento y la reducción del consumo energético sin sacrificar funcionalidad.',
@@ -17,7 +17,7 @@ const services = [
 		efficiency: 'Alta eficiencia'
 	},
 	{
-		icon: Smartphone,
+		url: '/dam.svg',
 		tag: 'DAM',
 		title: 'Apps Multiplataforma',
 		description: 'Desarrollamos aplicaciones que funcionan perfectamente en cualquier dispositivo, optimizando recursos y extendiendo la vida útil de la batería.',
@@ -25,7 +25,7 @@ const services = [
 		efficiency: 'Máximo rendimiento'
 	},
 	{
-		icon: Server,
+		url: '/asix.svg',
 		tag: 'ASIX',
 		title: 'Infraestructura Verde',
 		description: 'Gestionamos sistemas y redes con tecnologías de vanguardia, energías renovables y estrategias de refrigeración eficiente.',
@@ -50,11 +50,12 @@ const navigateToServices = () => {
 
 			<div class="services-list">
 				<article v-for="(service, index) in services" :key="index" class="service-item"
-					:class="{ 'reverse': index % 2 !== 0 }">
+					:class="{ 'reverse': index % 2 !== 0 }"
+				>
 					<div class="service-visual">
-						<div class="service-video">
-							<video src="/src/assets/nk_qr_demo.mp4" muted controls></video>
-						</div>
+						<!-- <div class="service-img"> -->
+							<img :src="service.url" />
+						<!-- </div> -->
 					</div>
 
 					<div class="service-content">
@@ -77,13 +78,9 @@ const navigateToServices = () => {
 
 			<div class="cta-footer">
 				<p>¿Quieres saber cómo podemos ayudarte?</p>
-				<PrimaryBtn @click="navigateToServices" variant="default">
-					<div class="btn-explore">
-						Explorar servicios completos
-						<ArrowRight class="btn-icon" />
-					</div>
+				<PrimaryBtn @click="navigateToServices" variant="default" :icon="ArrowRight" iconPosition="right">
+					Explorar servicios completos
 				</PrimaryBtn>
-				
 			</div>
 		</div></SectionContainer>
 	</section>
@@ -120,51 +117,26 @@ const navigateToServices = () => {
 	order: 2;
 }
 
+.service-item.reverse .service-content {
+	margin: auto auto auto 0;
+}
+
 .service-visual {
 	position: relative;
-	height: 300px;
-	border-radius: 1.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1.5rem;
-}
-
-@keyframes slidePattern {
-	0% {
-		transform: translate(0, 0);
-	}
-
-	100% {
-		transform: translate(50px, 50px);
-	}
-}
-
-.service-video {
-	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: auto;
 	z-index: 2;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
-.service-video video {
+.service-visual img {
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	box-shadow: 
-		0 10px 30px var(--primary-30),
-		0 5px 15px var(--primary-10),
-		inset 0 1px 0 var(--accent-color);
-	border: none;
-	border-radius: 5px;
+	min-width: 300px;
 }
 
 .service-content {
 	position: relative;
-	padding: 2rem;
+	margin: auto 0 auto auto;
 }
 
 .service-content h3 {
@@ -181,6 +153,7 @@ const navigateToServices = () => {
 	line-height: 1.7;
 	opacity: 0.8;
 	margin-bottom: 1.5rem;
+	max-width: 700px;
 }
 
 .service-metrics {
@@ -219,23 +192,7 @@ const navigateToServices = () => {
 	font-weight: 500;
 }
 
-.btn-explore {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.btn-icon {
-	width: 20px;
-	height: 20px;
-	transition: transform 0.3s ease;
-}
-
-.btn-explore:hover .btn-icon {
-	transform: translateX(5px);
-}
-
-@media (max-width: 968px) {
+@media (max-width: 768px) {
 
 	.service-item,
 	.service-item.reverse {
@@ -247,22 +204,27 @@ const navigateToServices = () => {
 		order: 0;
 	}
 
-	.service-visual {
-		height: 250px;
+	.service-item.reverse .service-content {
+		margin: auto auto auto auto;
 	}
 
-	.service-video video {
-		box-shadow: 
-			0 8px 20px rgba(0, 0, 0, 0.25),
-			0 3px 10px rgba(0, 0, 0, 0.15);
+	.service-content {
+		margin: auto auto auto auto;
+		text-align: center;
 	}
 
 	.service-content h3 {
 		font-size: 1.6rem;
 	}
 
+	.service-metrics {
+		justify-content: center;
+	}
+
 	.cta-footer {
 		padding: 2rem;
+		flex-direction: column;
+		gap: 1.5rem;
 	}
 }
 </style>
