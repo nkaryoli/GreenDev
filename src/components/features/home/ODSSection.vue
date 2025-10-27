@@ -40,11 +40,8 @@ const navigateToODS = () => {
 							<span>Impacto medible</span>
 						</div>
 					</div>
-					<PrimaryBtn @click="navigateToODS" variant="default">
-						<div class="btn-primary">
-							Explorar los ODS
-							<ArrowRight class="btn-icon" />
-						</div>
+					<PrimaryBtn @click="navigateToODS" variant="default" :icon="ArrowRight" iconPosition="right">
+						Explorar los ODS
 					</PrimaryBtn>
 				</div>
 				<div class="ods-grid">
@@ -52,7 +49,7 @@ const navigateToODS = () => {
 						<img :src="`./src/assets/ods/o${n}.svg`" :alt="`ODS ${n}`" />
 					</div>
 
-					<PrimaryBtn @click="navigateToODS" variant="secondary" size="full">
+					<PrimaryBtn @click="navigateToODS" variant="outline" size="full">
 						Saber más
 					</PrimaryBtn>
 
@@ -69,11 +66,15 @@ const navigateToODS = () => {
 
 .wrapper {
 	max-width: 1500px;
-	margin: 1rem auto;
+	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 1fr 30%;
+	grid-template-columns: 1fr 400px;
 	gap: 4rem;
 	align-items: center;
+}
+
+.content {
+	width: 100%;
 }
 
 .content h2 {
@@ -116,17 +117,6 @@ const navigateToODS = () => {
 	color: var(--primary-100);
 }
 
-.btn-primary {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.btn-icon {
-	width: 20px;
-	height: 20px;
-}
-
 .ods-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -153,9 +143,13 @@ const navigateToODS = () => {
 	z-index: 10;
 }
 
-@media (max-width: 768px) {
-	.sustainability-preview {
-		padding: 3rem 1rem;
+@media (max-width: 968px) {
+	.wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.ods-grid {
+		grid-template-columns: repeat(6, 1fr);
 	}
 
 	.content-wrapper {
@@ -169,6 +163,12 @@ const navigateToODS = () => {
 
 	.content p {
 		font-size: 1rem;
+	}
+}
+
+@media (max-width: 668px) {
+	.ods-grid {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 </style>
