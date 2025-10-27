@@ -4,6 +4,7 @@ import { MapPin, ArrowRight } from 'lucide-vue-next';
 import PrimaryBtn from '../../global/PrimaryBtn.vue';
 import { useRouter } from 'vue-router';
 import Badge from '../../global/Badge.vue';
+import SectionContainer from '../../global/SectionContainer.vue';
 
 const router = useRouter();
 
@@ -15,6 +16,8 @@ const navigate = () => {
 
 <template>
 	<section class="km0-cta">
+		<SectionContainer>
+
 		<div class="km0-content">
 			<div class="km0-text">
 				<Badge>Innovación Local</Badge>
@@ -26,34 +29,26 @@ const navigate = () => {
 					un desarrollo más sostenible.
 
 				</p>
-				<PrimaryBtn @click="navigate" size="medium" variant="default">
-					<div class="btn">
-						Descubre cómo trabajamos
-						<ArrowRight class="button-icon" />
-					</div>
+
+				<PrimaryBtn @click="navigate('/contacto')" variant="default" :icon="ArrowRight" iconPosition="right">
+					Descubre cómo trabajamos
 				</PrimaryBtn>
 			</div>
 			<div class="km0-visual">
 				<MapPin class="floating-icon" />
 			</div>
 		</div>
+		</SectionContainer>
 	</section>
 </template>
 
 <style scoped>
 .km0-cta {
-	width: 100%;
-	max-width: 1500px;
-	margin: auto;
-	padding: 4rem 2rem;
 	background: linear-gradient(135deg, var(--secondary-30) 0%, var(--bg-secondary-40) 100%);
-	position: relative;
-	overflow: hidden;
-	border-radius: 1rem;
 }
 
 .km0-content {
-	max-width: 1300px;
+	max-width: 1400px;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
@@ -75,6 +70,7 @@ const navigate = () => {
 }
 
 .km0-text p {
+	max-width: 700px;
 	margin-bottom: 2rem;
 	font-size: 0.95rem;
 	font-weight: 200;
@@ -82,25 +78,9 @@ const navigate = () => {
 	opacity: 0.8;
 }
 
-.btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.button-icon {
-	width: 20px;
-	height: 20px;
-	transition: transform 0.3s ease;
-}
-
-.cta-button:hover .button-icon {
-	transform: translateX(5px);
-}
-
 .km0-visual {
 	width: 100%;
-	max-width: 300px;
+	max-width: 400px;
 	height: 300px;
 	display: flex;
 	align-items: center;
@@ -129,11 +109,7 @@ const navigate = () => {
 	}
 }
 
-@media (max-width: 768px) {
-	.km0-cta {
-		padding: 3rem 1.5rem;
-	}
-
+@media (max-width: 968px) {
 	.km0-content {
 		flex-direction: column-reverse;
 		text-align: center;
