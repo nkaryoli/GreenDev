@@ -9,7 +9,7 @@ import PrimaryBtn from '../../global/PrimaryBtn.vue';
 const router = useRouter();
 
 const navigateToODS = () => {
-	router.push('/sostenibilidad');
+	router.push('/i+d');
 };
 
 </script>
