@@ -25,7 +25,7 @@ const featuredProjects = [
 ];
 
 const navigateToID = () => {
-	router.push('/investigacion-desarrollo');
+	router.push('/i+d');
 };
 </script>
 
@@ -42,7 +42,7 @@ const navigateToID = () => {
 						para alcanzar la neutralidad climática en 2050.
 					</p>
 				</div>
-				<PrimaryBtn @click="navigateToServices" variant="outline" :icon="ArrowRight" iconPosition="right">
+				<PrimaryBtn @click="navigateToID" variant="outline" :icon="ArrowRight" iconPosition="right">
 					Ver todos los proyectos
 				</PrimaryBtn>
 			</div>
