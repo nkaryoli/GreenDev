@@ -31,48 +31,42 @@ const navigateToID = () => {
 
 <template>
 	<div class="wrapper">
-	<SectionContainer>
-			
-				<div class="header">
-					<div class="header-content">
-						<Badge>Innovación</Badge>
-						
-						<h2>Investigación y Desarrollo</h2>
-						<p>
-							Trabajamos en soluciones tecnológicas con bajo impacto de CO₂
-							para alcanzar la neutralidad climática en 2050.
-						</p>
-					</div>
-					<PrimaryBtn @click="navigateToID" variant="outline">
-						<div class="btn-outline">
-							Ver todos los proyectos
-							<ArrowRight class="btn-icon" />
-						</div>
-					</PrimaryBtn>
-				</div>
+		<SectionContainer>
+			<div class="header">
+				<div class="header-content">
+					<Badge>Innovación</Badge>
 
-				<div class="projects-preview">
-					<article v-for="project in featuredProjects" :key="project.id" class="project-card-mini">
-						<component :is="project.icon" class="project-icon" />
-						<h3>{{ project.title }}</h3>
-						<p>{{ project.summary }}</p>
-						<div class="project-impact">
-							<TrendingDown class="impact-icon" />
-							<span>{{ project.impact }}</span>
-						</div>
-					</article>
+					<h2>Investigación y Desarrollo</h2>
+					<p>
+						Trabajamos en soluciones tecnológicas con bajo impacto de CO₂
+						para alcanzar la neutralidad climática en 2050.
+					</p>
 				</div>
-			
-			</SectionContainer>
-		</div>
+				<PrimaryBtn @click="navigateToServices" variant="outline" :icon="ArrowRight" iconPosition="right">
+					Ver todos los proyectos
+				</PrimaryBtn>
+			</div>
+
+			<div class="projects-preview">
+				<article v-for="project in featuredProjects" :key="project.id" class="project-card-mini">
+					<component :is="project.icon" class="project-icon" />
+					<h3>{{ project.title }}</h3>
+					<p>{{ project.summary }}</p>
+					<div class="project-impact">
+						<TrendingDown class="impact-icon" />
+						<span>{{ project.impact }}</span>
+					</div>
+				</article>
+			</div>
+		</SectionContainer>
+	</div>
 </template>
 
 
 <style scoped>
-
 .wrapper {
 	max-width: 1500px;
-	margin: 3rem auto;
+	margin: auto;
 }
 
 
@@ -101,23 +95,6 @@ const navigateToID = () => {
 	max-width: 700px;
 }
 
-.btn-outline {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-
-.btn-icon {
-	width: 20px;
-	height: 20px;
-	transition: transform 0.3s ease;
-}
-
-.btn-outline:hover .btn-icon {
-	transform: translateX(3px);
-}
-
 .projects-preview {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -136,7 +113,7 @@ const navigateToID = () => {
 	transform: translateY(-5px);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	border-color: var(--primary-50);
-	background: linear-gradient(135deg,  var(--bg-primary), var(--secondary-30), var(--bg-primary));
+	background: linear-gradient(135deg, var(--bg-primary), var(--secondary-30), var(--bg-primary));
 	box-shadow: 0 10px 25px var(--primary-10);
 }
 
@@ -179,9 +156,16 @@ const navigateToID = () => {
 	height: 18px;
 }
 
-@media (max-width: 768px) {
-	.id-preview {
-		padding: 3rem 1rem;
+@media (max-width: 968px) {
+
+	.wrapper {
+		margin: 0 auto;
+	}
+
+	.header {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
 	}
 
 	.preview-header {
