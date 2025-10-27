@@ -2,11 +2,19 @@
 import { ArrowRight, TrendingDown, Zap } from 'lucide-vue-next';
 import BgHero from './BgHero.vue';
 import Stats from './Stats.vue';
+import PrimaryBtn from '../../global/PrimaryBtn.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const navigate = (path) => {
+	router.push(path || '/contacto');
+};
 
 </script>
 
 <template>
-	<section id="inicio" >
+	<section id="inicio">
 		<div class="wrapper">
 			<div class="tag">
 				<Zap size="20" color="#FFB74D" />
@@ -16,37 +24,36 @@ import Stats from './Stats.vue';
 			<h2>
 				Desarrollo Tecnológico
 				<span>
-				Sostenible y Eficiente
+					Sostenible y Eficiente
 				</span>
 			</h2>
 
-			<p >
+			<p>
 				En GreenDev, nuestra misión es reducir la huella de carbono del sector tecnológico,
 				ofreciendo soluciones innovadoras que respetan los principios ASG (Ambiental, Social y Gobernanza).
 			</p>
 
 			<div class="action-btns">
-				<a href="#contact" class="contact-btn">
-					<span>Consulta sin compromiso</span>
-					<ArrowRight class="arrow-icon"/>
-				</a>
-				<button class="services-btn">
+				<PrimaryBtn @click="navigate('/contacto')" variant="default" :icon="ArrowRight" iconPosition="right">
+					Consulta sin compromiso
+				</PrimaryBtn>
+
+				<PrimaryBtn @click="navigate('/servicios')" variant="outline">
 					Conoce nuestros servicios
-				</button>
+				</PrimaryBtn>
 			</div>
 		</div>
 		<Stats />
-		<BgHero/>
-    </section>
+		<BgHero />
+	</section>
 </template>
 
 <style scoped>
-
 section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;	
+	justify-content: center;
 	min-height: 100vh;
 	padding-top: 140px;
 	background: linear-gradient(to bottom, var(--bg-secondary), transparent);
@@ -103,49 +110,6 @@ section {
 	justify-content: center;
 	margin-bottom: 3rem;
 	gap: 1rem;
-}
-
-.contact-btn {
-	display: flex;
-	align-items: center;
-	gap: 0.3rem;
-	font-size: 1rem;
-	font-weight: 700;
-	color: white;
-	background: var(--primary-100);
-	padding: 1rem 2rem;
-	border-radius: 8px;
-	border: none;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-	box-shadow: 0 10px 15px -3px var(--primary-50);
-}
-
-.arrow-icon {
-	transition: transform 0.1s ease;
-}
-
-.contact-btn:hover .arrow-icon {
-	transform: translateX(5px);
-}
-
-.services-btn {
-	font-size: 1rem;
-	font-weight: 700;
-	padding: 1rem 2rem;
-	background-color: transparent;
-	border: 1px solid var(--primary-100);
-	color: var(--primary-100);
-	border-radius: 8px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-.services-btn:hover {
-	background: var(--primary-10);
 }
 
 </style>
