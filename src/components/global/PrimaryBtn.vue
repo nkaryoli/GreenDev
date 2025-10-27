@@ -5,7 +5,9 @@ const props = defineProps({
 	size: { type: String, default: 'medium' },
 	variant: { type: String, default: 'primary' },
 	disabled: { type: Boolean, default: false },
-	fullWidth: { type: Boolean, default: false }
+	fullWidth: { type: Boolean, default: false },
+	icon: { type: [Object, Function, String], default: null },
+	iconPosition: { type: String, default: 'right' }
 });
 
 const emit = defineEmits(['click']);
@@ -27,19 +29,44 @@ function onClick(e) {
 
 <template>
 	<button :class="classes" :disabled="disabled" @click="onClick" aria-pressed="false">
-		<span>
-			<slot></slot>
-		</span>
-	</button>
+        <template v-if="$slots.icon">
+            <slot name="icon" v-if="iconPosition === 'left'"></slot>
+        </template>
+        <component v-else-if="icon && iconPosition === 'left'" :is="icon" class="primary-btn__icon" />
+
+        <span>
+            <slot></slot>
+        </span>
+
+        <template v-if="$slots.icon">
+            <slot name="icon" v-if="iconPosition === 'right'"></slot>
+        </template>
+        <component v-else-if="icon && iconPosition === 'right'" :is="icon" class="primary-btn__icon" />
+    </button>
 </template>
 
 <style scoped>
-
 .primary-btn {
 	font-weight: 700;
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	display: inline-flex;
+    align-items: center;    
+    gap: 0.5rem; 
+}
+
+.primary-btn__icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	transition: transform 0.1s ease;
+}
+
+.primary-btn:hover .primary-btn__icon {
+	transform: translateX(5px);
 }
 
 .primary-btn--small {
@@ -67,6 +94,7 @@ function onClick(e) {
 
 .primary-btn--default:hover {
 	box-shadow: 0 10px 15px -3px var(--primary-50);
+	scale: 1.02;
 }
 
 .primary-btn--secondary {
@@ -78,6 +106,12 @@ function onClick(e) {
 	background: transparent;
 	color: var(--primary-100);
 	border: 2px solid var(--primary-100);
+}
+
+.primary-btn--outline:hover {
+	background: var(--primary-10);
+	box-shadow: 0 10px 15px -3px var(--primary-50);
+	scale: 1.02;
 }
 
 .primary-btn--full {
