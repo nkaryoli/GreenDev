@@ -1,8 +1,8 @@
 <script setup>
 import { MessageSquare, Mail } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
-import SectionContainer from '../../global/SectionContainer.vue';
-import PrimaryBtn from '../../global/PrimaryBtn.vue';
+import SectionContainer from './SectionContainer.vue';
+import PrimaryBtn from './PrimaryBtn.vue';
 
 const router = useRouter();
 
