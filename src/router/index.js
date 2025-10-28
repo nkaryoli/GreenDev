@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter} from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
 import Home from "../pages/HomePage.vue";
 import ServicesPage from "../pages/ServicesPage.vue";
 import SustenabilityPage from "../pages/SustenabilityPage.vue";
@@ -33,7 +33,20 @@ const router = createRouter({
 			name: "contacto",
 			component: ContactPage,
 		}
-	]
+	],
+	scrollBehavior(to, from, savedPosition) {
+		if (savedPosition) {
+			return savedPosition
+		} else {
+			if (to.hash) {
+				return {
+					el: to.hash,
+					behavior: 'smooth'
+				}
+			}
+			return { top: 0, behavior: 'instant' }
+		}
+	}
 })
 
 export default router;
