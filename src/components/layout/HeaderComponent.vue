@@ -1,17 +1,31 @@
 <script setup>
 import Logotype from './Logotype.vue';
 import { Leaf, Menu, X  } from 'lucide-vue-next';
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const isMenuOpen = ref(false);
 
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+
 </script>
 
 <template>
-	<header>
+	<header :class="{ scrolled: isScrolled }">
 		<div class="container">
-			<RouterLink to="/"><Logotype/></RouterLink>
+			<a href="/"><Logotype/></a>
 			
 			<nav :class="{ open: isMenuOpen }" class="navbar">
 				<ul>
@@ -45,17 +59,24 @@ const isMenuOpen = ref(false);
 
 <style scoped>
 
-header {
+
+Header {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
-	background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+	background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0, 0));
 	padding-inline: 2rem;
-	backdrop-filter: blur(3px);
+	transition: all 0.3s ease;
 }
 
+header.scrolled {
+	backdrop-filter: blur(3px);
+	background-color: var(--bg-tertiary);
+	box-shadow: 0 0px 20px var(--bg-primary-50);
+
+}
 .container {
-	max-width: 1500px;
+	max-width: 1200px;
 	height: 90px;
 	margin: auto;
 	display: flex;
@@ -117,6 +138,16 @@ header {
 	cursor: pointer;
 	display: none;
 	z-index: 999;
+}
+
+.router-link-exact-active {
+	color: var(--primary-100);
+	font-weight: bold;
+	border-bottom: 2px solid var(--primary-100);
+}
+
+.router-link-active {
+	color: var(--primary-100);
 }
 
 @media (max-width: 968px) {

@@ -57,13 +57,13 @@ const sostenibilidad = [
 				<p>Comprometidos con la innovación tecnológica sostenible y la neutralidad climática 2050.</p>
 				<div class="icon-box">
 					<a href="#" >
-						<Linkedin size="20" color="rgb(255, 169, 41)" />
+						<Linkedin size="20" color="rgb(100, 255, 218)" />
 					</a>
 					<a href="#" >
-						<Twitter size="20" color="rgb(255, 169, 41)" />
+						<Twitter size="20" color="rgb(100, 255, 218)" />
 					</a>
 					<a href="#" >
-						<Github size="20" color="rgb(255, 169, 41)" />
+						<Github size="20" color="rgb(100, 255, 218)" />
 					</a>
 				</div>
 			</div>
@@ -89,18 +89,18 @@ const sostenibilidad = [
 				<ul class="contact-info">
 					<li>Contacto</li>
 					<li>
-						<MapPin color="rgb(255, 169, 41)"/>
+						<MapPin color="rgb(100, 255, 218)"/>
 						<span>
 							Paseo de la Sostenibilidad 42<br/>
 							08001 Barcelona, España
 						</span>
 					</li>
 					<li>
-						<Phone color="rgb(255, 169, 41)" />
+						<Phone color="rgb(100, 255, 218)" />
 						<span>+34 910 123 456</span>
 					</li>
 					<li>
-						<Mail color="rgb(255, 169, 41)" />
+						<Mail color="rgb(100, 255, 218)" />
 						<span>contacto@greendev.es</span>
 					</li>
 				</ul>
@@ -118,7 +118,7 @@ footer {
 }
 
 .container {
-	max-width: 1500px;
+	max-width: 1200px;
 	display: flex;
 	justify-content: space-between;
 	align-items: start;

@@ -20,7 +20,7 @@
   --bg-primary: rgb(0, 0, 0);             /* Negro puro */
   --bg-primary-50: rgba(0, 0, 0, 0.75);
   --bg-secondary: rgb(10, 10, 10);        /* Negro ligeramente más claro */
-  --bg-tertiary: rgb(24, 24, 27);         /* Gris muy oscuro para cards */
+  --bg-tertiary: rgba(24, 24, 27, 0.807);         /* Gris muy oscuro para cards */
   --bg-secondary-40: rgba(24, 24, 27, 0.4);
   
   /* Bordes y divisores */
