@@ -1,5 +1,6 @@
 <script setup>
 import { User, Mail, Building2, Phone, Send } from 'lucide-vue-next';
+import PrimaryBtn from '../global/PrimaryBtn.vue';
 </script>
 
 <template>
@@ -27,10 +28,9 @@ import { User, Mail, Building2, Phone, Send } from 'lucide-vue-next';
 					<textarea rows="4" cols="50" class="input-field" placeholder="Cuentanos sobre tu proyecto y cómo podemos ayudarte..."></textarea>
 				</div>
 				
-				<button>
+				<PrimaryBtn @click="navigate('/contacto')" variant="default" size="large" :icon="ArrowRight" iconPosition="right">
 					Enviar consulta
-					<Send />
-				</button>
+				</PrimaryBtn>
 			</form>
 		</div>
 	</div>
@@ -40,19 +40,19 @@ import { User, Mail, Building2, Phone, Send } from 'lucide-vue-next';
 
 .card {
 	background-image: linear-gradient(163deg, var(--primary-100) 0%, var(--secondary-100) 100%);
-	border-radius: 24px;
+	border-radius: 3rem;
 	transition: all 0.3s;
 }
 
 .inner-card {
-	border-radius: 36px;
+border-radius: 3.7rem;
 	overflow: hidden;
 	transition: all 0.2s;
 }
 
 .inner-card:hover {
 	transform: scale(0.99);
-	border-radius: 20px;
+	border-radius: 3rem;
 }
 
 .card:hover {
@@ -102,27 +102,5 @@ import { User, Mail, Building2, Phone, Send } from 'lucide-vue-next';
 	color: var(--text-color);
 }
 
-button {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	align-self: center;
-	gap: 0.3rem;
-	font-size: 1rem;
-	font-weight: 700;
-	color: white;
-	background:  var(--primary-100);
-	padding: 1rem 2rem;
-	margin-top: 1rem;;
-	border-radius: 8px;
-	border: none;
-	cursor: pointer;
-	transition: all 0.3s ease;
-}
-
-button:hover {
-	box-shadow: 0 10px 15px -3px var(--primary-50);
-}
 
 </style>

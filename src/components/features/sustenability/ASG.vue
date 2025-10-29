@@ -171,7 +171,7 @@ h2 {
 .pillar-card:hover {
   transform: translateY(-8px);
   border-color: var(--secondary-100);
-  box-shadow: 0 20px 50px var(--primary-y0);
+  box-shadow: 0 20px 50px var(--primary-10);
 }
 
 .pillar-icon-wrapper {

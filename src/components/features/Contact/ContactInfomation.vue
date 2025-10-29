@@ -64,7 +64,7 @@ const items = [
 }
 
 .contact-icon {
-	background-color: var(--secondary-100);
+	background-color: var(--primary-100);
 	padding: 1rem;
 	border-radius: 8px;
 	display: flex;

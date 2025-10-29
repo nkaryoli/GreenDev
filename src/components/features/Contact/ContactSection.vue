@@ -8,8 +8,8 @@ import ContactInfomation from '../Contact/ContactInfomation.vue';
 		<h2>Contacto</h2>
 		<p>Transforma tu negocio con tecnología sostenible. Hablemos de cómo podemos ayudarte.</p>
 		<div class="container">
-			<ContactInfomation />
 			<ContactForm />
+			<ContactInfomation />
 		</div>
 	</section>
 </template>
@@ -23,7 +23,7 @@ section {
 	justify-content: center;
 	align-items: center;
 	margin: auto;
-	padding: 140px 2rem;
+	padding: 8rem 2rem;
 
 }
 
