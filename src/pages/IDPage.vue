@@ -1,11 +1,13 @@
 <script setup>
 import IdSection from '../components/features/ids/IdSection.vue';
-import ODS from '../components/features/ids/ODS.vue';
+import OurTeam from '../components/features/ids/OurTeam.vue';
+import Testimonials from '../components/features/ids/Testimonials.vue';
 </script>
 
 <template>
 	<IdSection/>
-	<ODS />
+	<Testimonials/>
+	<OurTeam />
 </template>
 
 <style scoped></style>
