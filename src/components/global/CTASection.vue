@@ -1,8 +1,8 @@
 <script setup>
-import { MessageSquare, Mail } from 'lucide-vue-next';
 import { useRouter } from 'vue-router';
 import SectionContainer from './SectionContainer.vue';
 import PrimaryBtn from './PrimaryBtn.vue';
+import SpotedCard from './SpotedCard.vue';
 
 const router = useRouter();
 
@@ -14,52 +14,43 @@ const navigateToContact = () => {
 <template>
 	<SectionContainer>
 		<div class="cta-box">
-			<div class="cta-stats">
-				<div class="stat">
-					<span class="stat-number">24h</span>
-					<span class="stat-label">Tiempo de respuesta</span>
+			<SpotedCard class-name="custom-spotlight-card" spotlight-color="rgba(139, 148, 158, 0.35)">
+				<div class="cta-stats">
+					<div class="stat">
+						<span class="stat-number">24h</span>
+						<span class="stat-label">Tiempo de respuesta</span>
+					</div>
+					<div class="stat-divider"></div>
+					<div class="stat">
+						<span class="stat-number">100+</span>
+						<span class="stat-label">Proyectos sostenibles</span>
+					</div>
 				</div>
-				<div class="stat-divider"></div>
-				<div class="stat">
-					<span class="stat-number">100+</span>
-					<span class="stat-label">Proyectos sostenibles</span>
-				</div>
-			</div>
 
-			<h2>¿Hablamos de tu proyecto?</h2>
-			<p>
-				Cuéntanos tus necesidades y diseñaremos juntos una solución
-				tecnológica sostenible y eficiente.
-			</p>
+				<h2>¿Hablamos de tu proyecto?</h2>
+				<p>
+					Cuéntanos tus necesidades y diseñaremos juntos una solución
+					tecnológica sostenible y eficiente.
+				</p>
 
-			<div class="cta-buttons">
 				<PrimaryBtn @click="navigateToContact" variant="default" size="medium">
 					<div class="btn-primary">
-						Contactar ahora
-						<MessageSquare class="btn-icon" />
+						Contactar
 					</div>
 				</PrimaryBtn>
-				<a href="mailto:contacto@greendev.com" class="btn-secondary">
-					Enviar email
-					<Mail class="btn-icon" />
-				</a>
-			</div>
+
+			</SpotedCard>
 		</div>
 	</SectionContainer>
-
 </template>
 
 
 <style scoped>
 .cta-box {
-	max-width: 1500px;
+	max-width: 1200px;
 	margin: 0 auto;
 	text-align: center;
-	padding: 4rem 3rem;
 	background: var(--bg-primary);
-	border: 2px solid var(--secondary-30);
-	border-radius: 1.5rem;
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 .cta-stats {
@@ -78,15 +69,14 @@ const navigateToContact = () => {
 
 .stat-number {
 	font-size: 3rem;
-	font-weight: 800;
-	color: var(--secondary-100);
+	font-weight: 700;
+	color: var(--primary-100);
 	line-height: 1;
 }
 
 .stat-label {
 	font-size: 0.9rem;
 	color: var(--text-secondary);
-	font-weight: 300;
 }
 
 .stat-divider {
@@ -105,7 +95,7 @@ const navigateToContact = () => {
 .cta-box p {
 	font-size: 1.1rem;
 	line-height: 1.6;
-	opacity: 0.85;
+	opacity: 0.95;
 	font-weight: 200;
 	color: var(--text-secondary);
 	margin-bottom: 2.5rem;

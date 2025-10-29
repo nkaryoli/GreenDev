@@ -46,13 +46,16 @@ function onClick(e) {
 </template>
 
 <style scoped>
+
 .primary-btn {
 	font-weight: 700;
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
 	display: inline-flex;
-    align-items: center;    
+	justify-content: center;
+    align-items: center; 
+	border-radius: 3rem;
     gap: 0.5rem; 
 }
 
@@ -63,6 +66,7 @@ function onClick(e) {
     align-items: center;
     justify-content: center;
 	transition: transform 0.1s ease;
+	stroke-width: 3;
 }
 
 .primary-btn:hover .primary-btn__icon {
@@ -70,26 +74,24 @@ function onClick(e) {
 }
 
 .primary-btn--small {
-	padding: 0.4rem 0.8rem;
+	padding: 0.6rem 1.2rem;
 	font-size: 0.85rem;
-	border-radius: 6px;
 }
 
 .primary-btn--medium {
-	padding: 0.9rem 2rem;
+	min-width: 300px;
+	padding: 0.7rem 2rem;
 	font-size: 1rem;
-	border-radius: 8px;
 }
 
 .primary-btn--large {
-	padding: 1.25rem 2.5rem;
-	font-size: 1.125rem;
-	border-radius: 10px;
+	padding: 0.8rem 2.5rem;
+	font-size: 1.15rem;
 }
 
 .primary-btn--default {
 	background: var(--primary-100);
-	color: #fff;
+	color: var(--bg-primary);
 }
 
 .primary-btn--default:hover {
@@ -105,7 +107,7 @@ function onClick(e) {
 .primary-btn--outline {
 	background: transparent;
 	color: var(--primary-100);
-	border: 2px solid var(--primary-100);
+	border: 1px solid var(--primary-100);
 }
 
 .primary-btn--outline:hover {
