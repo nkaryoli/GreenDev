@@ -1,19 +1,35 @@
 :root {
-  --primary-100: rgb(255, 169, 41);
-  --primary-50: rgba(255, 169, 41, 0.5);
-  --primary-30: rgba(255, 169, 41, 0.3);
-  --primary-10: rgba(255, 169, 41, 0.1);
-  --secondary-100: rgb(0, 212, 146);
-  --secondary-50: rgba(0, 212, 145, 0.5);
-  --secondary-30: rgba(0, 212, 145, 0.1);
-  --accent-color: rgb(161, 136, 127);
-  --text-color: rgb(234, 234, 234);
-  --bg-primary: rgb(5, 5, 5);
-  --bg-primary-50: rgba(5, 5, 5, 0.75);
-  --bg-secondary: rgb(21, 25, 28);
-  --bg-secondary-40: rgba(21, 25, 28, 0.4);
-  --font-family-primary: 'Sora', sans-serif;
-  --font-family-secondary: 'Poppins', sans-serif;
+  /* Colores principales - Acentos sutiles */
+  --primary-100: rgb(100, 255, 218);      /* Verde azulado suave para CTAs */
+  --primary-50: rgba(100, 255, 218, 0.5);
+  --primary-30: rgba(100, 255, 218, 0.3);
+  --primary-10: rgba(100, 255, 218, 0.1);
+  
+  --secondary-100: rgb(139, 148, 158);    /* Gris azulado para elementos secundarios */
+  --secondary-50: rgba(139, 148, 158, 0.5);
+  --secondary-30: rgba(139, 148, 158, 0.3);
+  
+  --accent-color: rgb(100, 255, 218);     /* Mismo que primary para consistencia */
+  
+  /* Textos */
+  --text-color: rgb(255, 255, 255);     /* Blanco puro para títulos */
+  --text-secondary: rgb(161, 161, 170);   /* Gris medio para texto secundario */
+  --text-tertiary: rgb(113, 113, 122);    /* Gris oscuro para texto terciario */
+  
+  /* Fondos */
+  --bg-primary: rgb(0, 0, 0);             /* Negro puro */
+  --bg-primary-50: rgba(0, 0, 0, 0.75);
+  --bg-secondary: rgb(10, 10, 10);        /* Negro ligeramente más claro */
+  --bg-tertiary: rgb(24, 24, 27);         /* Gris muy oscuro para cards */
+  --bg-secondary-40: rgba(24, 24, 27, 0.4);
+  
+  /* Bordes y divisores */
+  --border-color: rgb(39, 39, 42);        /* Gris oscuro para bordes sutiles */
+  --border-light: rgb(63, 63, 70);        /* Gris medio para hover */
+  
+  /* Fuentes */
+  --font-family-primary: 'Inter', 'Sora', sans-serif;
+  --font-family-secondary: 'Geist', 'Poppins', sans-serif;
 }
 
 html {
@@ -43,7 +59,16 @@ ul {
   list-style: none;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
   font-family: var(--font-family-primary);
   font-weight: 900;
+	letter-spacing: 0.045em;
+}
+
+h2, h3 {
+  font-weight: 700;
+}
+
+p {
+	letter-spacing: 0.025em;
 }
