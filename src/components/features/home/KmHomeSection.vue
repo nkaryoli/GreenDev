@@ -48,7 +48,7 @@ const navigate = () => {
 }
 
 .km0-content {
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
@@ -64,7 +64,6 @@ const navigate = () => {
 
 .km0-text h2 {
 	font-size: 2rem;
-	font-weight: 500;
 	margin-bottom: 1rem;
 
 }
@@ -88,6 +87,7 @@ const navigate = () => {
 	background: url("/src/assets/map.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	border-radius: 3rem;
 }
 
 .floating-icon {

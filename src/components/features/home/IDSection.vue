@@ -65,7 +65,7 @@ const navigateToID = () => {
 
 <style scoped>
 .wrapper {
-	max-width: 1500px;
+	max-width: 1200px;
 	margin: auto;
 }
 
@@ -81,7 +81,6 @@ const navigateToID = () => {
 
 .header-content h2 {
 	font-size: 2.5rem;
-	font-weight: 500;
 	margin-bottom: 1rem;
 	color: var(--text-primary);
 }
@@ -104,15 +103,15 @@ const navigateToID = () => {
 .project-card-mini {
 	padding: 2rem;
 	background: linear-gradient(135deg, var(--bg-primary), var(--bg-primary), var(--secondary-30));
-	border: 1px solid var(--primary-10);
-	border-radius: 1rem;
+	border: 1px solid var(--secondary-30);
+	border-radius: 2.5rem;
 	transition: all 0.3s ease;
 }
 
 .project-card-mini:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-	border-color: var(--primary-50);
+	border-color: var(--secondary-50);
 	background: linear-gradient(135deg, var(--bg-primary), var(--secondary-30), var(--bg-primary));
 	box-shadow: 0 10px 25px var(--primary-10);
 }

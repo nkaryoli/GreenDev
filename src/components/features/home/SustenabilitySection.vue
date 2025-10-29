@@ -24,7 +24,6 @@ const items = [
 	}
 ];
 
-
 </script>
 
 <template>
@@ -55,7 +54,7 @@ const items = [
 <style scoped>
 .card-container {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -64,7 +63,8 @@ const items = [
 
 .focus-card {
     width: 100%;
-    border-left: 5px solid var(--secondary-50);
+    border-radius: 3rem;
+    border-left: 5px solid var(--primary-50);
     padding: 2rem 0 2rem 2rem;
     background: linear-gradient(to right, var(--secondary-30), transparent);
 }
@@ -72,7 +72,7 @@ const items = [
 .card-icon {
     width: 60px;
     height: 60px;
-    color: var(--secondary-100);
+    color: var(--primary-100);
     margin-bottom: 1rem;
     transition: all 0.3s ease;
 }

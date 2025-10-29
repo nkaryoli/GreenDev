@@ -53,9 +53,7 @@ const navigateToServices = () => {
 					:class="{ 'reverse': index % 2 !== 0 }"
 				>
 					<div class="service-visual">
-						<!-- <div class="service-img"> -->
-							<img :src="service.url" />
-						<!-- </div> -->
+						<img :src="service.url" />
 					</div>
 
 					<div class="service-content">
@@ -92,7 +90,7 @@ const navigateToServices = () => {
 }
 
 .container {
-	max-width: 1500px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -126,6 +124,8 @@ const navigateToServices = () => {
 	width: 100%;
 	height: 100%;
 	margin: auto;
+	border-radius: 2rem;
+	overflow: hidden;
 	z-index: 2;
 }
 
@@ -141,7 +141,6 @@ const navigateToServices = () => {
 
 .service-content h3 {
 	font-size: 1.7rem;
-	font-weight: 500;
 	margin-bottom: 1rem;
 	position: relative;
 	z-index: 2;
@@ -183,7 +182,7 @@ const navigateToServices = () => {
 	margin-top: 5rem;
 	padding: 3rem;
 	background: linear-gradient(165deg, var(--bg-primary), var(--secondary-30), var(--bg-primary));
-	border-radius: 0.725rem;
+	border-radius: 6rem;
 	border: 2px solid var(--secondary-30);
 }
 

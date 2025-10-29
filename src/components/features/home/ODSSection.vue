@@ -65,7 +65,7 @@ const navigateToODS = () => {
 }
 
 .wrapper {
-	max-width: 1500px;
+	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 1fr 400px;
@@ -80,8 +80,6 @@ const navigateToODS = () => {
 .content h2 {
 	font-size: 2.5rem;
 	margin-bottom: 1.5rem;
-	font-weight: 500;
-
 }
 
 .content p {
@@ -126,7 +124,7 @@ const navigateToODS = () => {
 .ods-item {
 	width: 100%;
 	aspect-ratio: 1;
-	border-radius: 0.25rem;
+	border-radius: 1rem;
 	overflow: hidden;
 	transition: all 0.3s ease;
 	opacity: 0.7;
