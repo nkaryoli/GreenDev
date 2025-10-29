@@ -3,12 +3,14 @@ import { Leaf, TrendingDown, Zap, Target } from 'lucide-vue-next';
 import SectionHeader from '../../global/SectionHeadder.vue';
 import SectionContainer from '../../global/SectionContainer.vue';
 import Badge from '../../global/Badge.vue'
+import GraphicBg from './GraphicBg.vue';
 </script>
 
 <template>
   <section class="wrapper">
+    <GraphicBg/>
     <SectionContainer>
-      <div class="container">
+      <div class="container-sustenability">
         <Badge>
         <span class="hero-badge">
           <Leaf class="badge-icon" />
@@ -49,15 +51,17 @@ import Badge from '../../global/Badge.vue'
 .wrapper {
   padding-top: 3rem;
   background: linear-gradient(to top, var(--secondary-30), transparent);
+  position: relative;
 } 
 
-.container {
+.container-sustenability {
   position: relative;
-  max-width: 1500px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  backdrop-filter: blur(2px);
   z-index: 2;
 }
 

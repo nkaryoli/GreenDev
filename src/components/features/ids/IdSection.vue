@@ -37,7 +37,6 @@ const researchProjects = [
 
 <template>
   <SectionContainer>
-
     <div class="container">
       <div class="section-intro">
         <h2>Investigación y Desarrollo</h2>
@@ -82,16 +81,14 @@ const researchProjects = [
         </div>
       </div>
     </div>
-
   </SectionContainer>
 </template>
 
 <style scoped>
 
-
 .container {
-  max-width: 1300px;
-  margin: 2rem auto 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-intro {
@@ -102,7 +99,7 @@ const researchProjects = [
 
 .section-intro h2 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem;
   color: var(--text-primary);
 }
 
@@ -129,7 +126,7 @@ const researchProjects = [
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px var(--primary-30);
   border-color: var(--secondary-100);
 }
 
@@ -145,7 +142,6 @@ const researchProjects = [
   height: 50px;
   padding: 12px;
   background: var(--secondary-100);
-  color: white;
   border-radius: 12px;
 }
 
@@ -156,7 +152,6 @@ const researchProjects = [
     var(--secondary-100) var(--progress), 
     var(--secondary-30) var(--progress)
   );
-  color: white;
   border-radius: 2rem;
   font-size: 0.85rem;
   font-weight: 700;
@@ -198,9 +193,8 @@ const researchProjects = [
   align-items: center;
   gap: 2rem;
   padding: 2.5rem;
-  background: linear-gradient(135deg, var(--secondary-100), var(--primary-100));
+  background: linear-gradient(135deg, var(--secondary-30), var(--primary-10));
   border-radius: 1rem;
-  color: white;
   margin-top: 3rem;
 }
 
@@ -213,7 +207,6 @@ const researchProjects = [
 .commitment-banner h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: white;
 }
 
 .commitment-banner p {

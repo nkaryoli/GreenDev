@@ -31,7 +31,7 @@ const scrollToServices = () => {
 					Explorar servicios
 				</PrimaryBtn>
 			</section>
-			<div class="plane-container">
+			<div class="planet-container">
 				<Planet />
 			</div>
 		</section>
@@ -44,6 +44,17 @@ const scrollToServices = () => {
 	display: flex;
 	align-items: center;
 	margin: auto;
+	gap: 3rem;
+}
+
+.wrapper::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(to bottom, var(--primary-10), var(--bg-secondary), transparent);
 }
 
 .hero {
@@ -54,7 +65,8 @@ const scrollToServices = () => {
 }
 
 .planet-container {
-	min-width: 300px;
+	width: 100%;
+	max-width: 400px;
 	aspect-ratio: 1/1;
 }
 
@@ -71,7 +83,7 @@ const scrollToServices = () => {
 }
 
 .hero p {
-	max-width: 800px;
+	max-width: 600px;
 	font-size: 1.1rem;
 	font-weight: 300;
 	line-height: 2rem;
@@ -91,8 +103,20 @@ const scrollToServices = () => {
 	}
 }
 
-@media (max-width: 768px) {
-	h1 {
+@media (max-width: 968px) {
+	.wrapper {
+		flex-direction: column;
+		align-items: center;
+		margin: auto;
+		gap: 1rem;
+		text-align: center;
+	}
+
+	.hero {
+		margin: 4rem auto 2rem auto;
+	}
+	
+	.hero h1 {
 		font-size: 2.5rem;
 	}
 }
