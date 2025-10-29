@@ -54,10 +54,11 @@ const services = [
 
 <template>
 	<SectionContainer>
-		<SectionHeader>
+		<SectionHeader id="services-overview">
 			<template #title>Nuestras áreas de especialización</template>
 			<template #subtitle>Tres servicios complementarios que cubren todas las necesidades 
-        tecnológicas de tu empresa, siempre con sostenibilidad en el centro.</template>
+				tecnológicas de tu empresa, siempre con sostenibilidad en el centro.
+			</template>
 		</SectionHeader>
 		<div class="cards-container">
 			<Card v-for="(servicio, index) in services" :key="index" :icon="servicio.icon" :title="servicio.title" class="card">
@@ -73,7 +74,7 @@ const services = [
 						</li>
 					</ul>
 					<div class="cta-container">
-					<PrimaryBtn @click="navigate" variant="outline" size="medium">Solicitar Información</PrimaryBtn></div>
+					<PrimaryBtn @click="navigate" variant="default" size="medium">Solicitar Información</PrimaryBtn></div>
 				</template>
 			</Card>
 		</div>
@@ -83,12 +84,14 @@ const services = [
 <style scoped>
 
 .cards-container {
-	display: flex;
-	/* flex-direction: column; */
+	display: grid;
+	grid-template-columns: auto auto;
+	flex-direction: column;
+	align-items: center;
 	gap: 2rem;
 	width: 100%;
-	max-width: 1500px;
-	margin: 3rem auto;
+	max-width: 1200px;
+	margin: 3rem auto 0 auto;
 }
 
 .features-list {

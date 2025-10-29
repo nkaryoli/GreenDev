@@ -33,8 +33,8 @@ defineProps({
 	width: 100%;
 	max-width: 1000px;
 	padding: 2rem;
-	border-radius: 1rem;
-	border: var(--secondary-50) 0.2rem solid;
+	border-radius: 3rem;
+	border: var(--secondary-30) 0.2rem solid;
 	transition: all 0.4s ease-in;
 	position: relative;
 	overflow: hidden;
@@ -43,7 +43,7 @@ defineProps({
 .card:hover {
 	background: linear-gradient(135deg,  var(--secondary-30),  var(--bg-primary));
 	transform: translateY(-0.5rem);
-	border: var(--primary-50) 0.2rem solid;
+	border: var(--secondary-100) 0.2rem solid;
 	border-radius: 5.5rem 0 5.5rem 0;
 	box-shadow: 0.4rem 0.4rem 0.9rem var(--primary-10);
 

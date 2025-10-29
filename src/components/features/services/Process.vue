@@ -137,7 +137,6 @@ const processBenefits = [
 
 
 			<div class="process-benefits">
-
 				<h3>Beneficios de nuestro proceso</h3>
 				<div class="benefits-grid">
 					<div v-for="(benefit, index) in processBenefits" :key="index" class="benefit-item">
@@ -156,34 +155,34 @@ const processBenefits = [
 
 <style scoped>
 .work-process {
-	background: var(--bg-secondary-40);
+	background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary-40), var(--bg-primary));
 }
 
 .process-timeline {
-	max-width: 1500px;
+	max-width: 1200px;
 	display: flex;
 	gap: 1rem;
 	margin: 0 auto 5rem auto;
-	height: 620px;
+	height: 600px;
 }
 
 .phase-card {
 	position: relative;
 	flex: 1;
-	background: var(--bg-primary-50);
+	background: var(--bg-secondary-40);
 	border: 2px solid var(--secondary-30);
-	border-radius: 1.5rem;
+	border-radius: 1rem;
 	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	cursor: pointer;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: 2.5rem;
+	padding: 2rem;
 }
 
 .phase-card:hover {
-	flex: 4;
+	flex: 5;
 	border-color: var(--secondary-100);
 	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
@@ -196,12 +195,14 @@ const processBenefits = [
 	font-weight: 900;
 	color: var(--secondary-50);
 	line-height: 1;
-	opacity: 0.5;
+	opacity: 0.3;
 	transition: opacity 0.3s ease;
 }
 
 .phase-card:hover .phase-number {
-	opacity: 0.3;
+	opacity: 1;
+	color: var(--primary-100);
+
 }
 
 .phase-header {
@@ -238,7 +239,6 @@ const processBenefits = [
 
 .phase-card h3 {
 	font-size: 1.4rem;
-	font-weight: 500;
 	text-align: center;
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
@@ -301,10 +301,10 @@ const processBenefits = [
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.75rem 1.25rem;
-	background: var(--secondary-30);
+	background: var(--primary-10);
 	border-radius: 2rem;
-	font-weight: 600;
-	color: var(--secondary-100);
+	font-weight: 400;
+	color: var(--primary-100);
 	width: fit-content;
 }
 
@@ -316,27 +316,26 @@ const processBenefits = [
 
 .process-benefits {
 	padding: 3rem 0;
-	max-width: 1500px;
+	max-width: 1000px;
 	margin: auto;
 	box-shadow: ;
 }
 
 .process-benefits h3 {
 	font-size: 2rem;
-	font-weight: 500;
 	text-align: center;
 	margin-bottom: 3rem;
 }
 
 .benefits-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 2rem;
 }
 
 .benefit-item {
 	position: relative;
-	padding: 0;
+	padding: 0.1rem;
 	text-align: center;
 	transition: all 0.3s ease;
 	overflow: hidden;
@@ -352,14 +351,14 @@ const processBenefits = [
 	width: 200%;
 	height: 200%;
 	background: conic-gradient(
-	from 0deg,
-	transparent 0deg 160deg,
-	var(--primary-100) 160deg 170deg,
-	var(--secondary-100) 170deg 180deg,
-	transparent 180deg 340deg,
-	var(--primary-100) 340deg 350deg,
-	var(--secondary-100) 350deg 360deg
-);
+		from 0deg,
+		transparent 0deg 160deg,
+		var(--primary-100) 160deg 170deg,
+		var(--secondary-100) 170deg 180deg,
+		transparent 180deg 340deg,
+		var(--primary-100) 340deg 350deg,
+		var(--secondary-100) 350deg 360deg
+	);
 	transform: translate(-50%, -50%) rotate(0deg);
 	animation: rotating 8s linear infinite paused;
 	border-radius: inherit;
@@ -378,12 +377,12 @@ const processBenefits = [
 .wrapper {
 	position: relative;
 	background: var(--bg-secondary);
-	padding: 2rem;
+	padding: 3rem 2rem;
 	border-radius: calc(1rem - 2px);
 	margin: 2px;
 	z-index: 1;
 	transition: all 0.3s ease;
-	height: 99%;
+	height: 98.6%;
 }
 
 @keyframes rotating {

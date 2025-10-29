@@ -3,6 +3,7 @@ import SectionContainer from '../../global/SectionContainer.vue';
 import { Leaf, ChevronDown } from 'lucide-vue-next';
 import Badge from '../../global/Badge.vue';
 import PrimaryBtn from '../../global/PrimaryBtn.vue';
+import Planet from './Planet.vue';
 
 const scrollToServices = () => {
 	document.querySelector('#services-overview')?.scrollIntoView({
@@ -13,50 +14,48 @@ const scrollToServices = () => {
 </script>
 
 <template>
-	<section class="wrapper">
-		<SectionContainer>
+	<SectionContainer>
+		<section class="wrapper">
 			<section class="hero">
-					<Badge>
-						<Leaf class="badge-icon" />
-						Servicios Sostenibles
-					</Badge>
-					
-					<h1>Soluciones tecnológicas que respetan el planeta</h1>
-					<p>
-						Desarrollamos proyectos digitales eficientes, escalables y
-						comprometidos con la reducción de la huella de carbono.
-					</p>
-					<PrimaryBtn @click="scrollToServices" :icon="ChevronDown" variant="outline" size="large">
-						Explorar servicios
-					</PrimaryBtn>
+				<Badge>
+					<Leaf class="badge-icon" />
+					Servicios Sostenibles
+				</Badge>
+
+				<h1>Soluciones tecnológicas que respetan el planeta</h1>
+				<p>
+					Desarrollamos proyectos digitales eficientes, escalables y
+					comprometidos con la reducción de la huella de carbono.
+				</p>
+				<PrimaryBtn @click="scrollToServices" :icon="ChevronDown" variant="default" size="large">
+					Explorar servicios
+				</PrimaryBtn>
 			</section>
-		</SectionContainer>
-	</section>
+			<div class="plane-container">
+				<Planet />
+			</div>
+		</section>
+	</SectionContainer>
 </template>
 
 <style scoped>
 .wrapper {
-	position: relative;
-	background: url('/bg-green.png');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: right;
-} 
-
-.wrapper::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(to right, var(--bg-primary) 40%, transparent);
-	pointer-events: none;
+	max-width: 1200px;
+	display: flex;
+	align-items: center;
+	margin: auto;
 }
 
 .hero {
 	position: relative;
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: 4rem auto;
-	z-index: 2;
+}
+
+.planet-container {
+	min-width: 300px;
+	aspect-ratio: 1/1;
 }
 
 .badge-icon {
