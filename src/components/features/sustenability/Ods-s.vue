@@ -71,7 +71,7 @@ const ods = [
 ];
 
 const getOdsImage = (num) => {
-	return new URL(`../../../assets/ods/o${num}.svg`, import.meta.url).href
+	return new URL(`../../../ods/o${num}.svg`, import.meta.url).href
 }
 </script>
 
@@ -91,7 +91,7 @@ const getOdsImage = (num) => {
 					<article v-for="(ods, index) in priorityODS" :key="index" class="ods-card priority">
 						<div class="wrapper">
 							<div class="ods-number">
-								<img :src="getOdsImage(ods.number)" :alt="`ODS ${ods.number}`" />
+								<img :src="`/ods/o${ods.number}.svg`" :alt="`ODS ${ods.number}`" />
 							</div>
 							<div class="content">
 

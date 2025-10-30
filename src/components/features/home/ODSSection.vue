@@ -46,7 +46,7 @@ const navigateToODS = () => {
 				</div>
 				<div class="ods-grid">
 					<div v-for="n in 8" :key="n" class="ods-item">
-						<img :src="`./src/assets/ods/o${n}.svg`" :alt="`ODS ${n}`" />
+						<img :src="`/ods/o${n}.svg`" :alt="`ODS ${n}`" />
 					</div>
 
 					<PrimaryBtn @click="navigateToODS" variant="outline" size="full">
